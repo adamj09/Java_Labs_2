@@ -39,12 +39,12 @@ public class Lab_1_1 {
     }
 
     public static double[][] sumMatrices(double[][][] matrices){ // Add 2D matrices
-        // If dimensions of all matrices are not all the same, return an empty matrix
+        // If the dimensions of all matrices are not all the same, return an empty matrix
         for(int i = 1; i < matrices.length; i++){
-            if(matrices[i].length != matrices[i - 1].length){
+            if(matrices[i].length != matrices[i - 1].length){ // Rows
                 return new double[0][0];
             }
-            for(int j = 1; j < matrices[i].length; j++){
+            for(int j = 1; j < matrices[i].length; j++){ // Columns
                 if(matrices[i][j].length != matrices[i - 1][j - 1].length){
                     return new double[0][0];
                 }
