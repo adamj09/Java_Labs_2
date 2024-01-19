@@ -161,7 +161,7 @@ public class Lab_1_1 {
                     System.out.print(matrix[i][j] + " ");
 
                     if(j == matrix[i].length - 1){
-                        System.out.print("| "); // print some closed brackets
+                        System.out.print(" |"); // print some closed brackets
                     }
                 }
                 System.out.println();
@@ -185,7 +185,7 @@ public class Lab_1_1 {
                         System.out.print(matrix[i][j][k] + " ");
 
                         if(k == matrix[i].length - 1){
-                            System.out.print("| "); // print some closed brackets
+                            System.out.print(" |"); // print some closed brackets
                         }
                     }
                     System.out.println();
