@@ -90,8 +90,8 @@ public class Lab_1_1 {
             if(matrices[i].length != matrices[i - 1].length){ // Check Rows
                 return new double[0][0];
             }
-            for(int j = 1; j < matrices[i].length; j++){ // Check Columns
-                if(matrices[i][j].length != matrices[i - 1][j - 1].length){
+            for(int j = 1; j < matrices[i].length; j++){
+                if(matrices[i][j].length != matrices[i - 1][j - 1].length){ // Check Columns
                     return new double[0][0];
                 }
             }
@@ -100,7 +100,7 @@ public class Lab_1_1 {
         // store result here
         double[][] sumMatrix = new double[matrices[0].length][matrices[0][0].length];
         
-        // Sum the matrices (start from second matrix since we already have the first stored in result)
+        // Sum the matrices
         for(int i = 0; i < matrices.length; i++){
             for(int j = 0; j < matrices[i].length; j++){
                 for(int k = 0; k < matrices[i][j].length; k++){
@@ -109,7 +109,7 @@ public class Lab_1_1 {
             }
         }
 
-        return sumMatrix.clone(); // return copy of result
+        return sumMatrix;
     }
 
     public static double[][][] matrixSum(double[][][][] matrices){ // Sum array of 3D matrices
@@ -130,10 +130,10 @@ public class Lab_1_1 {
             }
         }
 
-        // store result here (copy as to no alter the original matrix)
+        // store result here
         double[][][] sumMatrix = new double[matrices[0].length][matrices[0][0].length][matrices[0][0][0].length];
         
-        // Sum the matrices (start from second matrix since we already have the first stored in result)
+        // sum the matrices
         for(int i = 0; i < matrices.length; i++){
             for(int j = 0; j < matrices[i].length; j++){
                 for(int k = 0; k < matrices[i][j].length; k++){
@@ -144,17 +144,16 @@ public class Lab_1_1 {
             }
         }
 
-        return sumMatrix.clone(); // return copy of result
+        return sumMatrix;
     }
 
     public static void displayMatrix(double[][] matrix){ // prints a matrix (somewhat) well formatted
-        if(matrix.length == 0){ // check if result is valid
+        if(matrix.length == 0){
             System.out.println("Invalid matrix.");
-        }
-        else {
+        } else {
             System.out.println("2D Matrix");
-            for(int i = 0; i < matrix.length; i++){
-                for(int j = 0; j < matrix[i].length; j++){
+            for(int i = 0; i < matrix.length; i++){ // Rows
+                for(int j = 0; j < matrix[i].length; j++){ // Columns
                     if(j == 0){
                         System.out.print("| "); // print some open brackets
                     }
@@ -171,15 +170,14 @@ public class Lab_1_1 {
     }
 
     public static void displayMatrix(double[][][] matrix){
-        if(matrix.length == 0){ // check if result is valid
+        if(matrix.length == 0){
             System.out.println("Invalid matrix.");
-        }
-        else {
+        } else {
             System.out.println("3D Matrix:");
-            for(int i = 0; i < matrix.length; i++){
+            for(int i = 0; i < matrix.length; i++){ // Rows
                 System.out.println("Layer " + i);
-                for(int j = 0; j < matrix[i].length; j++){
-                    for(int k = 0; k < matrix[i][j].length; k++){
+                for(int j = 0; j < matrix[i].length; j++){ // Columns
+                    for(int k = 0; k < matrix[i][j].length; k++){ // Layers
                         if(k == 0){
                             System.out.print("| "); // print some open brackets
                         }
