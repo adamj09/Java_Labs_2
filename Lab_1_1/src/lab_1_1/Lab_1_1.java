@@ -147,7 +147,7 @@ public class Lab_1_1 {
         return sumMatrix;
     }
 
-    public static void displayMatrix(double[][] matrix){ // prints a matrix (somewhat) well formatted
+    public static void displayMatrix(double[][] matrix){ // prints a 2D matrix (somewhat) well formatted
         if(matrix.length == 0){
             System.out.println("Invalid matrix.");
         } else {
@@ -169,7 +169,7 @@ public class Lab_1_1 {
         }
     }
 
-    public static void displayMatrix(double[][][] matrix){
+    public static void displayMatrix(double[][][] matrix){ // prints a 3D matrix (somewhat) well formatted
         if(matrix.length == 0){
             System.out.println("Invalid matrix.");
         } else {
