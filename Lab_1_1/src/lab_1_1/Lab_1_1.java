@@ -151,7 +151,7 @@ public class Lab_1_1 {
         if(matrix.length == 0){
             System.out.println("Invalid matrix.");
         } else {
-            System.out.println("2D Matrix");
+            System.out.println("2D Matrix:");
             for(int i = 0; i < matrix.length; i++){ // Rows
                 for(int j = 0; j < matrix[i].length; j++){ // Columns
                     if(j == 0){
