@@ -5,21 +5,16 @@ import java.util.Date;
 public class Account {
     private int id = 0;
     private double balance = 0, annualInterestRate = 0; // in percent
-    private Date dateCreated;
+    private Date dateCreated = new Date(System.currentTimeMillis()); // sets date created to current time by default
 
-    Account(){
-        dateCreated = new Date(System.currentTimeMillis());
-    }
+    Account(){}
 
     Account(int id, double balance){
-        if(id < 0){
+        if(id < 0){ // if the id is less than 0, set the id to be positive and warn the user that you're doing so
             System.out.println("Warning: given ID is less than 0, forcing positive value.");
         }
-        if(balance < 0){
-            System.out.println("Warning: given balance is less than 0, forcing positive value.");
-        }
         this.id = Math.abs(id);
-        this.balance = Math.abs(balance);
+        this.balance = balance;
     }
 
     public int getId(){
@@ -51,14 +46,14 @@ public class Account {
     }
 
     public double getMonthlyInterest(){
-        return 0.0;
+        return balance * ((annualInterestRate / 100) / 12); // monthly interest rate = annualInterestRate / 12 here
     }
 
     public void withdraw(double amount){
-
+        balance -= amount;
     }
 
     public void deposit(double amount){
-
+        balance += amount;
     }
 }
