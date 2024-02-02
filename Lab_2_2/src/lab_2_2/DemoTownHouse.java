@@ -15,7 +15,8 @@ public class DemoTownHouse {
         }
 
         // Tell user what to input and in what order
-        System.out.println("Enter the following information in order about house #1: \n- Color\n- Bed Count\n- Washroom Count\n- Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
+        System.out.println("Enter the following information in order about house #1: \n- Color\n- Bed Count\n- Washroom Count\n-" 
+        + "Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
         // Create house #1 using no-arg constructor
         houseArray[0] = new TownHouse();
         houseArray[0].setAddress(addresses[0]);
@@ -29,7 +30,8 @@ public class DemoTownHouse {
         houseArray[0].setDiscountRate(input.nextDouble());
 
         // Tell user what to input and in what order
-        System.out.println("Enter the following information in order about house #2: \n- Color\n- Bed Count\n- Washroom Count\n- Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
+        System.out.println("Enter the following information in order about house #1: \n- Color\n- Bed Count\n- Washroom Count\n-" 
+        + "Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
         // Create house #2 using the constructor that takes only first 4 variables as arguments
         houseArray[1] = new TownHouse(
             addresses[1],
@@ -44,7 +46,8 @@ public class DemoTownHouse {
         houseArray[1].setDiscountRate(input.nextDouble());
 
         // Tell user what to input and in what order
-        System.out.println("Enter the following information in order about house #3: \n- Color\n- Bed Count\n- Washroom Count\n- Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
+        System.out.println("Enter the following information in order about house #1: \n- Color\n- Bed Count\n- Washroom Count\n-" 
+        + "Floor Count\n- Construction Year\n- Is it a waterfront property?\n- Daily Rent\n- Discount Rate");
         // Create house #3 using the constructor that takes all variables as arguments
         houseArray[2] = new TownHouse(
             addresses[2],

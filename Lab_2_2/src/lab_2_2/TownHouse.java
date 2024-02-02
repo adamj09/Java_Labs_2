@@ -119,8 +119,8 @@ public class TownHouse {
 }
 
 class Address {
-    public int civicNum;
-    public String street, city, postalCode, province, country;
+    private int civicNum;
+    private String street, city, postalCode, province, country;
 
     Address(){}
 
