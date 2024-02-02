@@ -5,7 +5,7 @@ import java.util.Date;
 public class Account {
     private int id = 0;
     private double balance = 0, annualInterestRate = 0; // in percent
-    private Date dateCreated = new Date(System.currentTimeMillis());;
+    private Date dateCreated = new Date(System.currentTimeMillis()); // sets date created to current time by default
 
     Account() {} // default constructor
 
@@ -46,15 +46,15 @@ public class Account {
         this.annualInterestRate = annualInterestRate;
     }
 
-    public double getMonthlyInterest() {
-        return balance * ((annualInterestRate / 100) / 12);
+    public double getMonthlyInterest(){
+        return 0.0;
     }
 
-    public void withdraw(double amount) {
-        balance -= amount;
+    public void withdraw(double amount){
+
     }
 
-    public void deposit(double amount) {
-        balance += amount;
+    public void deposit(double amount){
+
     }
 }
