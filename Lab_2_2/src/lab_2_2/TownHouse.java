@@ -6,12 +6,14 @@ public class TownHouse {
     private String color;
     private int bedCount, washroomCount, floorCount, constructionYear;
     boolean isWaterFront;
-    double dailyRent, discountRate;
+    double dailyRent, discountRate; // discount rate is in percent
 
+    // No-arg constructor: creates empty TownHouse object
     TownHouse(){
         address = new Address();
     }
 
+    // Constructor taking only first 4 variables
     TownHouse(Address address, String color, int bedCount, int washroomCount){
         this.address = address;
         this.color = color;
@@ -19,6 +21,7 @@ public class TownHouse {
         this.washroomCount = washroomCount;
     }
 
+    // Constructor taking all variables
     TownHouse(Address address, String color, int bedCount, int washroomCount, int floorCount, 
         int constructionYear, boolean isWaterFront, double dailyRent, double discountRate){
         this(address, color, bedCount, washroomCount);
@@ -29,6 +32,7 @@ public class TownHouse {
         this.discountRate = discountRate;
     }
 
+    // --- Getters ---
     public Address getAddress(){
         return address;
     }
@@ -65,6 +69,7 @@ public class TownHouse {
         return discountRate;
     }
 
+    // --- Setters ----
     public void setAddress(Address address){
         this.address = address;
     }
@@ -96,15 +101,20 @@ public class TownHouse {
     public void setDailyRent(double dailyRent){
         this.dailyRent = dailyRent;
     }
-
+    
     public void setDiscountRate(double discountRate){
         this.discountRate = discountRate;
     }
 
-    public String toString(){
-        return address.toString() + "\nColor: " + color + "\nBed count: " + bedCount + "\nWashroom count: " + washroomCount + 
-            "\nFloor count: " + floorCount + "\nConstruction year: " + constructionYear + "\nIs water front?: " + isWaterFront +
-            "\nDaily rent: " + dailyRent + "\nDiscount rate: " + discountRate;
+    // --- Other Functions ---
+    public double calcRent(){
+        return dailyRent - (dailyRent * (discountRate / 100)); // total rent taking into account discount rate
+    }
+
+    public String toString(){ // put all information about TownHouse into one readable string
+        return address.toString() + "\n- Color: " + color + "\n- Bed count: " + bedCount + "\n- Washroom count: " + washroomCount + 
+            "\n- Floor count: " + floorCount + "\n- Construction year: " + constructionYear + "\n- Is water front?: " + isWaterFront +
+            "\n- Daily rent: $" + dailyRent + "\n- Discount rate: " + discountRate + "%\n- Rent including discount: $" + calcRent();
     }
 }
 
@@ -123,7 +133,7 @@ class Address {
         this.country = country;
     }
 
-    public String toString(){
+    public String toString(){ // put all information about Address into one readable string
         return "Address: " + civicNum + " " + street + ", " + city + ", " + postalCode + ", " + province + ", " + country;
     }
 }
