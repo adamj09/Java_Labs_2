@@ -59,24 +59,13 @@ public class Lab_1_2 {
 
     public static void accountDemo() {
         Account account = new Account(1122, 20000);
-
-        account.setAnnualInterestRate(4.5);
-        account.withdraw(2500);
-        account.deposit(3000);
-
-        System.out.printf(
-                "--- Account Details ---\n Balance: $%.2f\n Monthly Interest: $%.2f\n Account Creation Date: %s\n",
-                account.getBalance(), account.getMonthlyInterest(), account.getDateCreated().toString());
-    }
-
-    public static void accountDemo(){
-        Account account = new Account(1122, 20000); // create new account object
         // test methods for account
         account.setAnnualInterestRate(4.5);
         account.withdraw(2500);
         account.deposit(3000);
         // print account information
-        System.out.printf("--- Account Details ---\n Balance: $%.2f\n Monthly Interest: $%.2f\n Account Creation Date: %s\n"
-        , account.getBalance(), account.getMonthlyInterest(), account.getDateCreated().toString());
+        System.out.printf(
+                "--- Account Details ---\n Balance: $%.2f\n Monthly Interest: $%.2f\n Account Creation Date: %s\n",
+                account.getBalance(), account.getMonthlyInterest(), account.getDateCreated().toString());
     }
 }

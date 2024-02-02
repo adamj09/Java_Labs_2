@@ -102,9 +102,9 @@ public class TownHouse {
     }
 
     public String toString(){
-        return address.toString() + ", Color: " + color + ", Bed count: " + bedCount + ", Washroom count: " + washroomCount + 
-            ", Floor count: " + floorCount + ", Construction year: " + constructionYear + ", Is water front?: " + isWaterFront +
-            ", Daily rent: " + dailyRent + ", Discount rate: " + discountRate;
+        return address.toString() + "\nColor: " + color + "\nBed count: " + bedCount + "\nWashroom count: " + washroomCount + 
+            "\nFloor count: " + floorCount + "\nConstruction year: " + constructionYear + "\nIs water front?: " + isWaterFront +
+            "\nDaily rent: " + dailyRent + "\nDiscount rate: " + discountRate;
     }
 }
 
@@ -124,7 +124,7 @@ class Address {
     }
 
     public String toString(){
-        return civicNum + " " + street + ", " + city + ", " + postalCode + ", " + province + ", " + country;
+        return "Address: " + civicNum + " " + street + ", " + city + ", " + postalCode + ", " + province + ", " + country;
     }
 }
 
