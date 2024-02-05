@@ -7,53 +7,54 @@ public class Account {
     private double balance = 0, annualInterestRate = 0; // in percent
     private Date dateCreated = new Date(System.currentTimeMillis()); // sets date created to current time by default
 
-    Account(){}
+    Account() {} // default constructor
 
-    Account(int id, double balance){
-        if(id < 0){ // if the id is less than 0, set the id to be positive and warn the user that you're doing so
+    Account(int id, double balance) {
+        // lets user know that input ID is invalid (and therefore will forcefully be changed to become valid)
+        if (id < 0) {
             System.out.println("Warning: given ID is less than 0, forcing positive value.");
         }
         this.id = Math.abs(id);
         this.balance = balance;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public double getBalance(){
+    public double getBalance() {
         return balance;
     }
 
-    public double getAnnualInterestRate(){
+    public double getAnnualInterestRate() {
         return annualInterestRate;
     }
 
-    public Date getDateCreated(){
+    public Date getDateCreated() {
         return dateCreated;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setBalance(double balance){
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    public void setAnnualInterestRate(double annualInterestRate){
+    public void setAnnualInterestRate(double annualInterestRate) {
         this.annualInterestRate = annualInterestRate;
     }
 
     public double getMonthlyInterest(){
-        return balance * ((annualInterestRate / 100) / 12); // monthly interest rate = annualInterestRate / 12 here
+        return 0.0;
     }
 
     public void withdraw(double amount){
-        balance -= amount;
+
     }
 
     public void deposit(double amount){
-        balance += amount;
+
     }
 }
