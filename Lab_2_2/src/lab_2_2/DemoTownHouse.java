@@ -7,6 +7,7 @@ public class DemoTownHouse {
         Scanner input = new Scanner(System.in);
         TownHouse[] houseArray = new TownHouse[3];
 
+        // 1st Constructor
         houseArray[0] = new TownHouse();
         houseArray[0].setAddress(new Address(input.nextInt(), input.next(), input.next(), input.next(), input.next(), input.next()));
         input.next();
@@ -16,6 +17,7 @@ public class DemoTownHouse {
         houseArray[0].setDailyRent(input.nextDouble());
         houseArray[0].setDiscountRate(input.nextDouble());
 
+        // 2nd Constructor
         houseArray[1] = new TownHouse(
             new Address(input.nextInt(), input.next(), input.next(), input.next(), input.next(), input.next()),
             input.next(),
@@ -30,6 +32,7 @@ public class DemoTownHouse {
         houseArray[1].setDailyRent(input.nextDouble());
         houseArray[1].setDiscountRate(input.nextDouble());
 
+        // 3rd Constructor
         houseArray[2] = new TownHouse(
             new Address(input.nextInt(), input.next(), input.next(), input.next(), input.next(), input.next()),
             input.next(),
