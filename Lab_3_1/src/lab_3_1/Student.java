@@ -75,8 +75,8 @@ public class Student {
     }
 
     public String toString(){
-        return "Student ID: " + id + "\nName: " + firstName + " " + lastName + "\nLatest Self-given Score: " + 
-            latestSelfScore + "\nLatest Provided Score" + latestProvidedScore + "\nLatest Comments Received : " + latestCommentsReceived +
-            "\nLatest Comments Provided: " + latestCommentsProvided;
+        return " Student ID: " + id + "\n Name: " + firstName + " " + lastName + "\n Latest Self-given Score: " + 
+            latestSelfScore + "\n Latest Provided Score: " + latestProvidedScore + "\n Latest Comments Received: " + latestCommentsReceived +
+            "\n Latest Comments Provided: " + latestCommentsProvided;
     }
 }

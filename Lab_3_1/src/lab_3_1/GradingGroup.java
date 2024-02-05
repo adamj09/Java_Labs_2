@@ -51,7 +51,7 @@ public class GradingGroup {
     }
 
     public String toString(){
-        return "Lab Number: " + labNum + "\nEvaluation Date: " + evaluationDate +
+        return " Lab Number: " + labNum + "\n Evaluation Date: " + evaluationDate +
             "\n--- Student 1 ---\n" + student1.toString() + "\n--- Student 2 ---\n" + student2.toString(); 
     }
 }

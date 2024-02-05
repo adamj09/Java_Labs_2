@@ -10,7 +10,7 @@ public class DemoGradingGroup {
         Student[] students = new Student[4];
 
         // Create Students
-        for(int i = 0; i < gradingGroups.length; i++){
+        for(int i = 0, student = 0; i < gradingGroups.length; i++){
             String[] commentsReceived = new String[2];
             double[] scoresReceived = new double[2];
 
@@ -22,15 +22,16 @@ public class DemoGradingGroup {
                 scoresReceived[j] = input.nextDouble();
                 commentsReceived[j] = input.next();
 
-                students[j + i] = new Student(input.nextInt(), input.next(), input.next(), 
+                students[student] = new Student(input.nextInt(), input.next(), input.next(), 
                     scoresReceived[j], 0, commentsReceived[j], "");
+                student++;
             }
 
             // Set provided scores for students
-            students[i].setLatestProvidedScore(scoresReceived[1]);
-            students[i + 1].setLatestProvidedScore(scoresReceived[0]);
-            students[i].setLatestCommentsProvided(commentsReceived[1]);
-            students[i + 1].setLatestCommentsProvided(commentsReceived[0]);
+            students[student - 1].setLatestProvidedScore(scoresReceived[1]);
+            students[student].setLatestProvidedScore(scoresReceived[0]);
+            students[student - 1].setLatestCommentsProvided(commentsReceived[1]);
+            students[student].setLatestCommentsProvided(commentsReceived[0]);
 
             // Create grading groups
             if(i == 0){
@@ -47,8 +48,18 @@ public class DemoGradingGroup {
             }
             System.out.printf("--- Grading Group %d ---\n", i + 1);
             System.out.println(gradingGroups[i].toString()); // print info about grading groups
+            System.out.println();
         }
 
-        
+        Student bestStudent = students[0];
+        for(int i = 0; i < students.length; i++){
+            for(int j = i; j < students.length; j++){
+                if(students[j].getLatestSelfScore() > students[i].getLatestSelfScore()){
+                    bestStudent = students[j];
+                }
+            }
+        }
+
+        System.out.println("--- Best Student ---\n" + bestStudent.toString());
     }
 }
