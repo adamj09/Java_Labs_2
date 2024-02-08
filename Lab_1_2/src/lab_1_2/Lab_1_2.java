@@ -38,7 +38,7 @@ public class Lab_1_2 {
     public static void randomDemo(){
         Random random = new Random(1000);
 
-        System.out.println("--- First 50 numbers generated (with seed 1000) between 0 and 100 ---");
+        System.out.println("--- First 50 numbers generated (with seed 1000) between 0 and 100 ---"); // header
         for (int i = 0; i < 50; i++) {
             System.out.printf("[%d] %d ", i + 1, random.nextInt(100));
             if ((i + 1) % 10 == 0) { // new row every 10 entries
@@ -48,10 +48,10 @@ public class Lab_1_2 {
     }
 
     public static void dateDemo() {
-        System.out.println(
+        System.out.println( // header
                 "Dates at the following times elapsed (ms) since 00:00:00, January 1, 1970, UTC+0 in local time:");
         Date date = new Date();
-        for (int i = 4; i <= 11; i++) {
+        for (int i = 4; i <= 11; i++) { // print all times
             date.setTime((long) Math.pow(10, i)); // set the time
             System.out.printf("%d: %s\n", (long) Math.pow(10, i), date.toString()); // display
         }

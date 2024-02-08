@@ -8,8 +8,8 @@ public class DemoGradingGroup {
         Scanner input = new Scanner(System.in);
         GradingGroup[] gradingGroups = new GradingGroup[2];
         Student[] students = new Student[4];
-
-        // Create Students
+        
+        // Create Grading Groups
         for(int i = 0, student = 0; i < gradingGroups.length; i++){
             String[] commentsReceived = new String[2];
             double[] scoresReceived = new double[2];
@@ -21,8 +21,10 @@ public class DemoGradingGroup {
                 
                 // Store scores and comments received so each student gets the right info given to each other
                 scoresReceived[j] = input.nextDouble();
-                commentsReceived[j] = input.next();
-
+                input.next();
+                commentsReceived[j] = input.nextLine();
+                
+                // Create new student
                 students[student] = new Student(input.nextInt(), input.next(), input.next(), 
                     scoresReceived[j], 0, commentsReceived[j], "");
             }
