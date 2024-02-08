@@ -3,9 +3,9 @@ package lab_3_1;
 import java.util.Date;
 
 public class GradingGroup {
-    Student student1, student2;
-    Date evaluationDate;
-    double labNum;
+    private Student student1, student2;
+    private Date evaluationDate;
+    private double labNum;
 
     GradingGroup(){
         this(new Student(), new Student(), new Date(), 0);
@@ -18,6 +18,7 @@ public class GradingGroup {
         this.labNum = labNum;
     }
 
+    // Getters
     public Student getStudent1(){
         return student1;
     }
@@ -34,6 +35,7 @@ public class GradingGroup {
         return labNum;
     }
 
+    // Setters
     public void setStudent1(Student student1){
         this.student1 = student1;
     }
@@ -46,11 +48,11 @@ public class GradingGroup {
         this.evaluationDate = evaluationDate;
     }
 
-    public void setLabNum(int labNum){
+    public void setLabNum(double labNum){
         this.labNum = labNum;
     }
 
-    public String toString(){
+    public String toString(){ // Return a string with class info
         return " Lab Number: " + labNum + "\n Evaluation Date: " + evaluationDate +
             "\n--- Student 1 ---\n" + student1.toString() + "\n--- Student 2 ---\n" + student2.toString(); 
     }
