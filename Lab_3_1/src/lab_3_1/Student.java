@@ -18,6 +18,7 @@ public class Student {
         this.latestCommentsProvided = latestCommentsProvided;
     }
 
+    // Getters
     public int getId(){
         return id;
     }
@@ -46,6 +47,7 @@ public class Student {
         return latestCommentsProvided;
     }
 
+    // Setters
     public void setId(int id){
         this.id = id;
     }

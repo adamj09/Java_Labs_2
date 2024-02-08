@@ -47,14 +47,14 @@ public class Account {
     }
 
     public double getMonthlyInterest(){
-        return 0.0;
+        return ((annualInterestRate / 12) / 100) * balance;
     }
 
     public void withdraw(double amount){
-
+        balance -= amount;
     }
 
     public void deposit(double amount){
-
+        balance += amount;
     }
 }
