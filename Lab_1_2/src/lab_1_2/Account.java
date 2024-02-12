@@ -5,7 +5,7 @@ import java.util.Date;
 public class Account {
     private int id = 0;
     private double balance = 0, annualInterestRate = 0; // in percent
-    private Date dateCreated = new Date(System.currentTimeMillis()); // sets date created to current time by default
+    private Date dateCreated = new Date(); // sets date created to current time by default
 
     Account() {} // default constructor
 
