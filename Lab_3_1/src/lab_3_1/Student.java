@@ -76,7 +76,7 @@ public class Student {
         this.latestCommentsProvided = latestCommentsProvided;
     }
 
-    public String toString(){
+    public String toString(){ // Return string with class info
         return " Student ID: " + id + "\n Name: " + firstName + " " + lastName + "\n Latest Self-given Score: " + 
             latestSelfScore + "\n Latest Provided Score: " + latestProvidedScore + "\n Latest Comments Received: " + latestCommentsReceived +
             "\n Latest Comments Provided: " + latestCommentsProvided;

@@ -19,6 +19,7 @@ public class DemoGradingGroup {
                 System.out.println("Enter the following information about student " + (j + 1) + " from group " + (i + 1) +
                     ":\n- Latest Received Score\n- Latest Comments Received\n- Student ID\n- First Name\n- Last Name");
                 
+                // Store scores and comments received so each student gets the right info given to each other
                 scoresReceived[j] = input.nextDouble();
                 input.next();
                 commentsReceived[j] = input.nextLine();
@@ -27,7 +28,8 @@ public class DemoGradingGroup {
                 students[student] = new Student(input.nextInt(), input.next(), input.next(), 
                     scoresReceived[j], 0, commentsReceived[j], "");
             }
-            // Set provided scores for students
+
+            // Set provided scores and comments for students
             students[student - 2].setLatestProvidedScore(scoresReceived[1]);
             students[student - 1].setLatestProvidedScore(scoresReceived[0]);
             students[student - 2].setLatestCommentsProvided(commentsReceived[1]);
@@ -42,16 +44,16 @@ public class DemoGradingGroup {
                 gradingGroups[i].setEvaluationDate(new Date());
                 gradingGroups[i].setLabNum(input.nextDouble());
             }
-            else { // all argument constructor
+            else { // all arg constructor
                 System.out.println("Enter the lab number for group " + (i + 1));
                 gradingGroups[i] = new GradingGroup(students[2], students[3], new Date(), input.nextDouble());
             }
             System.out.printf("--- Grading Group %d ---\n", i + 1);
             System.out.println(gradingGroups[i].toString()); // print info about grading groups
-            System.out.println();
+            System.out.println(); // spacing
         }
 
-        // Find best student and print
+        // Find student with best score and print
         Student bestStudent = students[0];
         for(int i = 0; i < students.length; i++){
             for(int j = i; j < students.length; j++){

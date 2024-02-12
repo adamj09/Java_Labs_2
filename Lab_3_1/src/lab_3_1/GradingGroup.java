@@ -52,7 +52,7 @@ public class GradingGroup {
         this.labNum = labNum;
     }
 
-    public String toString(){
+    public String toString(){ // Return a string with class info
         return " Lab Number: " + labNum + "\n Evaluation Date: " + evaluationDate +
             "\n--- Student 1 ---\n" + student1.toString() + "\n--- Student 2 ---\n" + student2.toString(); 
     }
