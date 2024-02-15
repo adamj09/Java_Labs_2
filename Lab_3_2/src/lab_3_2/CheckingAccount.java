@@ -5,7 +5,7 @@ import java.util.Date;
 public class CheckingAccount {
     private int accountNum = 0;
     private String lastName = "lastName", firstName = "firstName";
-    private double balance = 0, monthlyFee = 0, minBalance = 0;
+    private double balance = 0, monthlyFee = 0, minBalance = 10;
     private Date dateCreated = new Date(); // sets date created to current time by default
 
     CheckingAccount() {} // default constructor
@@ -64,7 +64,7 @@ public class CheckingAccount {
         this.lastName = lastname;
     }
 
-    public void getFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -86,6 +86,15 @@ public class CheckingAccount {
 
     public void deposit(double amount) {
         balance += amount;
+    }
+
+    public void applyMonthlyFee(){
+        balance -= monthlyFee; // applying the monthly fee just reduces the balance by that fee
+    }
+
+    public String toString(){
+        return "Account Number: " + accountNum + "\nLast Name: " + lastName + "\nFirst Name: " + firstName + "\nBalance: $" + balance + 
+            "\nMonthly Fee: $" + monthlyFee + "\nMinimum Balance: " + minBalance + "\nDate Created: " + dateCreated.toString();
     }
 }
 
