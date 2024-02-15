@@ -1,4 +1,4 @@
-package lab_1_2;
+package lab_4_1;
 
 import java.util.Date;
 
@@ -47,9 +47,11 @@ public class Account {
     }
 
     public double getMonthlyInterest(){
-        return ((annualInterestRate / 12) / 100) * balance; // 
+        // divide annualInterestRate by 12 then 100 to get monthly interest rate, 
+        // then multiply that by balance to get monthly interest owed
+        return ((annualInterestRate / 12) / 100) * balance;
     }
-
+    
     public void withdraw(double amount){
         balance -= amount;
     }
