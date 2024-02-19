@@ -12,7 +12,7 @@ public class Tax {
 
     private int[][] brackets = { // Set default brackets to those defined in problem
         {
-            25050,
+            27050,
             65550,
             136750,
             297350,
@@ -41,7 +41,15 @@ public class Tax {
         },
     };
 
-    private double[] rates = new double[5]; // Tax rates in percentages
+    // Tax rates in percentages
+    private double[] rates = {
+        15,
+        27.5,
+        30.5,
+        35.5,
+        39.1
+    };
+
     private double taxableIncome = 0; // Set default taxable income to 0
 
     Tax(){} // No-arg constructor
@@ -94,7 +102,7 @@ public class Tax {
 
     private int getTaxBracket(int filingStatus, double taxableIncome){
         int bracket = 0;
-        for(; bracket < brackets[filingStatus].length; bracket++){ // loop through all brackets
+        for(; bracket < brackets[filingStatus].length - 1; bracket++){ // loop through all brackets
             // If taxableIncome is less than max of a bracket and bracket has a max, return bracket
             if(taxableIncome <= brackets[filingStatus][bracket] && bracket != (brackets[filingStatus].length - 1)){
                 return bracket;
