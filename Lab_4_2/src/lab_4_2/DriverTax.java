@@ -8,27 +8,35 @@ public class DriverTax {
         Tax tax = new Tax();
         int filingStatus;
         double taxableIncome;
-        double[] rates = new double[5];
-        int[][] brackets = new int[4][5];
-        System.out.println(
-                "Enter the filing status\n0 - Single Filer\n1 - Married Jointly or Qualifying Widow(er)\n2 - Married Separately\n3 - Head of Household");
-        filingStatus = input.nextInt();
-        tax.setFilingStatus(filingStatus);
-        System.out.println("Enter the tax brackets for the filing status");
-        for (int i = 0; i < brackets.length; i++) {
-            for (int j = 0; j < brackets[i].length; j++) {
-                brackets[i][j] = input.nextInt();
-            }
+
+        System.out.println("Choose an option:");
+        System.out.println("1 - Display with increment");
+        System.out.println("2 - User input");
+        System.out.println("3 - Quit");
+
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1:
+                // Disp2lay with increment logic here
+                break;
+            case 2:
+                System.out.println(
+                        "Enter the filing status\n0 - Single Filer\n1 - Married Jointly or Qualifying Widow(er)\n2 - Married Separately\n3 - Head of Household");
+                filingStatus = input.nextInt();
+                tax.setFilingStatus(filingStatus);
+                System.out.println("Enter the taxable income");
+                taxableIncome = input.nextDouble();
+                tax.setTaxableIncome(taxableIncome);
+                System.out.println("Tax is " + tax.getTax());
+                break;
+            case 3:
+                System.out.println("Exiting...");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid choice. Please enter 1, 2, or 3.");
+                break;
         }
-        tax.setBrackets(brackets);
-        System.out.println("Enter the tax rates for the filing status");
-        for (int i = 0; i < rates.length; i++) {
-            rates[i] = input.nextDouble();
-        }
-        tax.setRates(rates);
-        System.out.println("Enter the taxable income");
-        taxableIncome = input.nextDouble();
-        tax.setTaxableIncome(taxableIncome);
-        System.out.println("Tax is " + tax.getTax());
     }
 }
