@@ -34,6 +34,7 @@ public class Tax {
             297351
         },
     };
+
     private double[] rates = new double[5]; // Tax rates in percentages
     private double taxableIncome = 0;
 
@@ -85,7 +86,7 @@ public class Tax {
     private int getTaxBracket(int filingStatus, double taxableIncome){
         int bracket = 0;
         for(bracket = 0; bracket < brackets[filingStatus].length; bracket++){
-            if(taxableIncome < brackets[filingStatus][bracket]){
+            if(taxableIncome < brackets[filingStatus][bracket] && bracket != 5){
                 return bracket;
             }
         }
