@@ -18,7 +18,10 @@ public class DriverTax {
 
         switch (choice) {
             case 1:
-                // Disp2lay with increment logic here
+                for (int i = 0; i <= 5; i += 1) {
+                    tax.setTaxableIncome(i);
+                    System.out.println("Tax on " + i + " is " + tax.getTax());
+                }
                 break;
             case 2:
                 System.out.println(
@@ -28,7 +31,8 @@ public class DriverTax {
                 System.out.println("Enter the taxable income");
                 taxableIncome = input.nextDouble();
                 tax.setTaxableIncome(taxableIncome);
-                System.out.println("Tax is " + tax.getTax());
+                System.out
+                        .println("Tax is " + tax.getTaxRate(filingStatus, taxableIncome) + "% ($" + tax.getTax() + ")");
                 break;
             case 3:
                 System.out.println("Exiting...");
