@@ -90,6 +90,6 @@ public class Tax {
                 return bracket;
             }
         }
-        return bracket; // Shouldn't be reachable
+        return bracket;
     }
 }
