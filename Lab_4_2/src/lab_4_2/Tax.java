@@ -9,25 +9,29 @@ public class Tax {
             25050,
             65550,
             136750,
-            297350
+            297350,
+            297351
         },
         {
             45200,
             109250,
             166500,
-            297350
+            297350,
+            297351
         },
         {
             22600,
             54625,
             83250,
-            148675
+            148675,
+            148676
         },
         {
             36250,
             93650,
             151650,
-            297350
+            297350,
+            297351
         },
     };
     private double[] rates = new double[5]; // Tax rates in percentages
@@ -79,11 +83,12 @@ public class Tax {
     }
 
     private int getTaxBracket(int filingStatus, double taxableIncome){
-        for(int bracket = 0; bracket < brackets[filingStatus].length; bracket++){
+        int bracket = 0;
+        for(bracket = 0; bracket < brackets[filingStatus].length; bracket++){
             if(taxableIncome < brackets[filingStatus][bracket]){
                 return bracket;
             }
         }
-        return 0; // Shouldn't be reachable
+        return bracket; // Shouldn't be reachable
     }
 }
