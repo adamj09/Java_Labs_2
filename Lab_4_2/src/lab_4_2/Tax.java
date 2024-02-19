@@ -85,7 +85,7 @@ public class Tax {
 
     private int getTaxBracket(int filingStatus, double taxableIncome){
         int bracket = 0;
-        for(bracket = 0; bracket < brackets[filingStatus].length; bracket++){
+        for(; bracket < brackets[filingStatus].length; bracket++){
             if(taxableIncome < brackets[filingStatus][bracket] && bracket != (brackets[filingStatus].length - 1)){
                 return bracket;
             }
