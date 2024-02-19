@@ -45,5 +45,7 @@ public class Tax {
         this.taxableIncome = taxableIncome;
     }
 
-
+    public double getTax(){
+        return 0.0;
+    }
 }
