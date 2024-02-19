@@ -100,7 +100,7 @@ public class Tax {
         return taxableIncome * (rates[getTaxBracket(filingStatus, taxableIncome)] / 100);
     }
 
-    public double getTaxRate(int filingStatus, int taxableIncome){
+    public double getTaxRate(int filingStatus, double taxableIncome){
         // Return tax rate in percent based on filing status and income
         return rates[getTaxBracket(filingStatus, taxableIncome)];
     }
