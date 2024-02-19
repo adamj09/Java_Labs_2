@@ -9,21 +9,28 @@ public class Tax {
             25050,
             65550,
             136750,
-            297350,
+            297350
         },
         {
             45200,
             109250,
-            
+            166500,
+            297350
         },
         {
-
+            22600,
+            54625,
+            83250,
+            148675
         },
         {
-
+            36250,
+            93650,
+            151650,
+            297350
         },
     };
-    private double[] rates = new double[4];
+    private double[] rates = new double[5]; // Tax rates in percentages
     private double taxableIncome = 0;
 
     Tax(){}
@@ -68,19 +75,15 @@ public class Tax {
     }
 
     public double getTax(){
-        switch(filingStatus){
-            case 0: // Single filer
-                for(int i = 0; i < brackets[filingStatus].length; i++){
-                    
-                }
-                break;
-            case 1: // Married jointly or qualified widow
-                break;
-            case 2: // Married separately
-                break;
-            case 3: // Head of household
-                break;
+        return taxableIncome * (rates[getTaxBracket(filingStatus, taxableIncome)] / 100);
+    }
+
+    private int getTaxBracket(int filingStatus, double taxableIncome){
+        for(int bracket = 0; bracket < brackets[filingStatus].length; bracket++){
+            if(taxableIncome < brackets[filingStatus][bracket]){
+                return bracket;
+            }
         }
-        return taxableIncome;
+        return 0; // Shouldn't be reachable
     }
 }
