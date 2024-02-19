@@ -39,12 +39,12 @@ public class Student {
         return lastName;
     }
 
-    public String getLastestCommentsReceived(){
-        return latestCommentsReceived;
-    }
-
     public String getLatestCommentsProvided() {
         return latestCommentsProvided;
+    }
+
+    public String getLatestCommentsReceived() {
+        return latestCommentsReceived;
     }
 
     // Setters
