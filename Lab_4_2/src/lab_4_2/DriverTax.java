@@ -15,10 +15,16 @@ public class DriverTax {
             choice = input.nextInt();
 
             switch (choice) {
-                case 1: // Display with increment
-                    for (int i = 0; i <= tax.getRates().length; i += 1) {
-                        tax.setTaxableIncome(i);
-                        System.out.println("Tax on " + i + " is " + tax.getTax());
+                case 1:
+                    for (int j = 0; j < 4; j++) {
+                        System.out.println("Filing status: " + tax.getFilingStatusesAsStrings()[j]);
+                        for (int i = 50000; i <= 60000; i += 1000) {
+                            tax.setTaxableIncome(i);
+                            tax.setFilingStatus(j);
+                            System.out.printf("Tax on $%d is $%.2f\n", i,
+                                    tax.getTax(),
+                                    tax.getFilingStatus());
+                        }
                     }
                     break;
                 case 2: // User input
@@ -47,7 +53,7 @@ public class DriverTax {
                 case 3: // Exit program
                     System.out.println("Exiting...");
                     break;
-                default:
+                default:a
                     System.out.println("Invalid choice. Please enter 1, 2, or 3.");
                     break;
             }
