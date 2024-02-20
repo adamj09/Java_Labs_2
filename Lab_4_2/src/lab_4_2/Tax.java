@@ -108,7 +108,8 @@ public class Tax {
     private int getTaxBracket(int filingStatus, double taxableIncome) {
         int bracket = 0;
         for (; bracket < brackets[filingStatus].length - 1; bracket++) { // loop through all brackets
-            // If taxableIncome is less than max of a bracket and bracket has a max, return bracket
+            // If taxableIncome is less than max of a bracket and bracket has a max, return
+            // bracket
             if (taxableIncome <= brackets[filingStatus][bracket] && bracket != (brackets[filingStatus].length - 1)) {
                 return bracket;
             }
@@ -116,8 +117,9 @@ public class Tax {
         return bracket; // This should return the maximum bracket (one with no limit)
     }
 
-    public String[] getFilingStatusesAsStrings(){
+    public String[] getFilingStatusesAsStrings() {
         // return filing statuses as array of strings for printing purposes
-        return new String[]{"single filer", "married jointly or qualifying widow", "married separately", "head of household"};
+        return new String[] { "single filer", "married jointly or qualifying widow", "married separately",
+                "head of household" };
     }
 }
