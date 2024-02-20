@@ -115,4 +115,9 @@ public class Tax {
         }
         return bracket; // This should return the maximum bracket (one with no limit)
     }
+
+    public String[] getFilingStatusesAsStrings(){
+        // return filing statuses as array of string for printing purposes
+        return new String[]{"single filer", "married jointly or qualifying widow", "married separately", "head of household"};
+    }
 }
