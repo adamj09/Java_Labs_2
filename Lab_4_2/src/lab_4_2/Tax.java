@@ -117,7 +117,7 @@ public class Tax {
     }
 
     public String[] getFilingStatusesAsStrings(){
-        // return filing statuses as array of string for printing purposes
+        // return filing statuses as array of strings for printing purposes
         return new String[]{"single filer", "married jointly or qualifying widow", "married separately", "head of household"};
     }
 }
