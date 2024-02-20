@@ -15,13 +15,13 @@ public class DriverTax {
             choice = input.nextInt();
 
             switch (choice) {
-                case 1:
-                    for (int i = 0; i <= 5; i += 1) {
+                case 1: // Display with increment
+                    for (int i = 0; i <= tax.getRates().length; i += 1) {
                         tax.setTaxableIncome(i);
                         System.out.println("Tax on " + i + " is " + tax.getTax());
                     }
                     break;
-                case 2:
+                case 2: // User input
                     // Get filing status from user
                     do{
                         System.out.println("--- Enter the Filing Status ---\n0 - Single Filer\n"
@@ -44,7 +44,7 @@ public class DriverTax {
                     // Display tax rate and taxed income
                     System.out.printf("Tax is %.2f%% ($%.2f)\n", tax.getTaxRate(), tax.getTax());
                     break;
-                case 3:
+                case 3: // Exit program
                     System.out.println("Exiting...");
                     break;
                 default:
