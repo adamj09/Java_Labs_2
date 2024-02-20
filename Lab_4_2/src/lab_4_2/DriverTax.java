@@ -8,7 +8,7 @@ public class DriverTax {
         Tax tax = new Tax();
 
         int choice;
-        do {
+        while(true){
             // Get choice from user
             System.out.println("--- Choose an option ---\n1 - Display with increment" +
                     "\n2 - User input\n3 - Quit");
@@ -16,15 +16,17 @@ public class DriverTax {
 
             switch (choice) {
                 case 1:
+                    // Print tax for each filing status for income between $50,000 and $60,000, with increments of $1,000
                     for (int j = 0; j < 4; j++) {
-                        System.out.println("Filing status: " + tax.getFilingStatusesAsStrings()[j]);
+                        // Header with filing status
+                        System.out.printf("--- Filing status: %s ---\n", 
+                            tax.getFilingStatusesAsStrings()[j]);
+                        // Print income and associated tax owed
                         for (int i = 50000; i <= 60000; i += 1000) {
                             tax.setTaxableIncome(i);
-                            tax.setFilingStatus(j);
-                            System.out.printf("Tax on $%d is $%.2f\n", i,
-                                    tax.getTax(),
-                                    tax.getFilingStatus());
+                            System.out.printf("Tax on $%d is $%.2f\n", i, tax.getTax());
                         }
+                        System.out.println(); // spacing
                     }
                     break;
                 case 2: // User input
@@ -52,11 +54,12 @@ public class DriverTax {
                     break;
                 case 3: // Exit program
                     System.out.println("Exiting...");
+                    System.exit(0);
                     break;
-                default:a
+                default:
                     System.out.println("Invalid choice. Please enter 1, 2, or 3.");
                     break;
             }
-        } while (choice < 1 || choice > 3); // loop every time choice is invalid
+        }   
     }
 }
