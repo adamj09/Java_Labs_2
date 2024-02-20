@@ -100,7 +100,7 @@ public class Tax {
         return taxableIncome * (rates[getTaxBracket(filingStatus, taxableIncome)] / 100);
     }
 
-    public double getTaxRate(int filingStatus, double taxableIncome) {
+    public double getTaxRate() {
         // Return tax rate in percent based on filing status and income
         return rates[getTaxBracket(filingStatus, taxableIncome)];
     }
@@ -108,8 +108,7 @@ public class Tax {
     private int getTaxBracket(int filingStatus, double taxableIncome) {
         int bracket = 0;
         for (; bracket < brackets[filingStatus].length - 1; bracket++) { // loop through all brackets
-            // If taxableIncome is less than max of a bracket and bracket has a max, return
-            // bracket
+            // If taxableIncome is less than max of a bracket and bracket has a max, return bracket
             if (taxableIncome <= brackets[filingStatus][bracket] && bracket != (brackets[filingStatus].length - 1)) {
                 return bracket;
             }
