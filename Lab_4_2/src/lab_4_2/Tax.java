@@ -61,7 +61,20 @@ public class Tax {
 
     public double getTax() {
         // Returns amount that should be taxed based on filing status and income
-        return taxableIncome * (rates[getTaxBracket(filingStatus, taxableIncome)] / 100);
+        double tax = 0;
+        double income = taxableIncome;
+
+        for (int i = 0; i < brackets[filingStatus].length; i++) {
+            if (income <= brackets[filingStatus][i]) {
+                tax += income * rates[i] / 100;
+                break;
+            } else {
+                tax += brackets[filingStatus][i] * rates[i] / 100;
+                income -= brackets[filingStatus][i];
+            }
+        }
+
+        return tax + (brackets[filingStatus][0] * rates[0] / 100);
     }
 
     public double getTaxRate() {

@@ -202,4 +202,21 @@ public class DriverTax {
             }
         }   
     }
+
+  /* private static double getInputFromUser(String promptMessage, String errorMessage, double[] validInputs){
+        Scanner input = new Scanner(System.in);
+        double value;
+        boolean isValid = false;
+        do {
+            System.out.println(promptMessage);
+            value = input.nextDouble();
+
+            for(int i = 0; i < validInputs.length i++){
+
+            }
+            if (tax.getTaxableIncome() < 0) {
+                System.out.println(errorMessage);
+            }
+        } while (tax.getTaxableIncome() < 0);
+    }*/
 }
