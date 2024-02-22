@@ -9,50 +9,14 @@ public class Tax {
 
     private int filingStatus = SINGLE_FILER; // Set to default filing status
 
-    private int[][] brackets = { // Set default brackets to those defined in problem
-            {
-                    27050,
-                    65550,
-                    136750,
-                    297350,
-                    297351
-            },
-            {
-                    45200,
-                    109250,
-                    166500,
-                    297350,
-                    297351
-            },
-            {
-                    22600,
-                    54625,
-                    83250,
-                    148675,
-                    148676
-            },
-            {
-                    36250,
-                    93650,
-                    151650,
-                    297350,
-                    297351
-            },
-    };
+    private int[][] brackets;
 
     // Tax rates in percentages
-    private double[] rates = {
-            15,
-            27.5,
-            30.5,
-            35.5,
-            39.1
-    };
+    private double[] rates;
 
     private double taxableIncome = 0; // Set default taxable income to 0
 
-    Tax() {
-    } // No-arg constructor
+    Tax() {} // No-arg constructor
 
     Tax(int filingStatus, int[][] brackets, double[] rates, double taxableIncome) { // Constructor with all args
         this.filingStatus = filingStatus;
