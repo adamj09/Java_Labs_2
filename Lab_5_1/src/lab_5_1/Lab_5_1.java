@@ -12,8 +12,8 @@ public class Lab_5_1 {
 
         Scanner scanner = new Scanner(System.in);
         // Get length of each side from user
-        for (int i = 1; i < 4; i++) {
-            System.out.println("Enter length of side " + i + " of the triangle" );
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Enter length of side " + (i + 1) + " of the triangle" );
             if (i == 0){
                 triangle.setSide1(inputDoubleGreaterThanZero());
             }
@@ -52,6 +52,6 @@ public class Lab_5_1 {
     }
 
     private static void polymorphismDemo(){
-        
+
     }
 }
