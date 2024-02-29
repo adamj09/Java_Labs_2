@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class GeometricObject {
     private String color;
-    private boolean filled;
+    private boolean isFilled;
     private Date dateCreated;
 
     public GeometricObject(){
         dateCreated = new Date();
     }
 
-    public GeometricObject(String color, boolean filled) {
+    public GeometricObject(String color, boolean isFilled) {
         this.color = color;
-        this.filled = filled;
+        this.isFilled = isFilled;
     }
 
     public String getColor() {
@@ -25,11 +25,11 @@ public class GeometricObject {
     }
 
     public boolean isFilled() {
-        return filled;
+        return isFilled;
     }
 
-    public void setFilled(boolean filled) {
-        this.filled = filled;
+    public void setFilled(boolean isFilled) {
+        this.isFilled = isFilled;
     }
 
     public Date getDateCreated() {
@@ -40,4 +40,7 @@ public class GeometricObject {
         this.dateCreated = dateCreated;
     }
 
+    public String toString(){
+        return "Geometric Object: color = " + color + " isFilled = " + isFilled + " dateCreated = " + dateCreated;
+    }
 }
