@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Lab_5_1 {
     public static void main(String[] args) {
+        triangleDemo();
+    }
+
+    private static void triangleDemo(){
         Triangle triangle = new Triangle();
 
         Scanner scanner = new Scanner(System.in);
@@ -35,7 +39,7 @@ public class Lab_5_1 {
             triangle.toString(), triangle.getArea(), triangle.getPerimeter(), triangle.getColor(), triangle.isFilled(), triangle.getDateCreated().toString());
     }
 
-    static double inputDoubleGreaterThanZero(){ // gets input from user that will always be greater than 0
+    private static double inputDoubleGreaterThanZero(){ // gets input from user that will always be greater than 0
         Scanner scanner = new Scanner(System.in);
         double num = 0;
         do{
@@ -45,5 +49,9 @@ public class Lab_5_1 {
             }
         } while(num <= 0);
         return num;
+    }
+
+    private static void polymorphismDemo(){
+        
     }
 }
