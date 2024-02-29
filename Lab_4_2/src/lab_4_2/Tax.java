@@ -1,24 +1,19 @@
 package lab_4_2;
 
 public class Tax {
-    // Filing statuses
     private final int SINGLE_FILER = 0,
             MARRIED_JOINTLY_OR_QUALIFYING_WIDOW = 1,
             MARRIED_SEPARATELY = 2,
             HEAD_OF_HOUSEHOLD = 3;
-
-    private int filingStatus = SINGLE_FILER; // Set to default filing status
-
+    private int filingStatus = SINGLE_FILER;
     private int[][] brackets;
-
-    // Tax rates in percentages
     private double[] rates;
+    private double taxableIncome = 0;
 
-    private double taxableIncome = 0; // Set default taxable income to 0
+    Tax() {
+    } // No-arg constructor
 
-    Tax() {} // No-arg constructor
-
-    Tax(int filingStatus, int[][] brackets, double[] rates, double taxableIncome) { // Constructor with all args
+    Tax(int filingStatus, int[][] brackets, double[] rates, double taxableIncome) {
         this.filingStatus = filingStatus;
         this.brackets = brackets.clone();
         this.rates = rates.clone();
@@ -60,21 +55,21 @@ public class Tax {
     }
 
     public double getTax() {
-        // Returns amount that should be taxed based on filing status and income
         double tax = 0;
         double income = taxableIncome;
-
-        for (int i = 0; i < brackets[filingStatus].length; i++) {
-            if (income <= brackets[filingStatus][i]) {
+        int[] bracket = brackets[filingStatus];
+        for (int i = 0; i < bracket.length - 1; i++) {
+            if (income <= bracket[i]) {
                 tax += income * rates[i] / 100;
-                break;
+                return tax;
             } else {
-                tax += brackets[filingStatus][i] * rates[i] / 100;
-                income -= brackets[filingStatus][i];
+                tax += (bracket[i] - (i > 0 ? bracket[i - 1] : 0)) * rates[i] / 100;
+                income -= (bracket[i] - (i > 0 ? bracket[i - 1] : 0));
             }
         }
-
-        return tax + (brackets[filingStatus][0] * rates[0] / 100);
+        // Tax the remaining income using the last bracket's rate
+        tax += income * rates[bracket.length - 1] / 100;
+        return tax;
     }
 
     public double getTaxRate() {
