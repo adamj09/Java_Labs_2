@@ -16,31 +16,33 @@ public class GeometricObject {
         this.isFilled = isFilled;
     }
 
+    // --- Getters ---
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public boolean isFilled() {
         return isFilled;
     }
 
-    public void setFilled(boolean isFilled) {
-        this.isFilled = isFilled;
-    }
-
     public Date getDateCreated() {
         return dateCreated;
+    }
+
+    // --- Setters ---
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setFilled(boolean isFilled) {
+        this.isFilled = isFilled;
     }
 
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
 
-    public String toString(){
+    public String toString(){ // 
         return "Geometric Object: color = " + color + " isFilled = " + isFilled + " dateCreated = " + dateCreated;
     }
 }
