@@ -46,6 +46,6 @@ public class Triangle extends GeometricObject{
     }
 
     public String toString(){
-        return "Triangle: side1 = " + side1 + " side2 = " + side2 + " side3 = " + side3;
+        return "Triangle: Side 1 = " + side1 + " Side2 = " + side2 + " Side3 = " + side3;
     }
 }
