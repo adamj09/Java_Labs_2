@@ -42,7 +42,7 @@ public class GeometricObject {
         this.dateCreated = dateCreated;
     }
 
-    public String toString(){ // 
+    public String toString(){ // print attributes of GeometricObject
         return "Geometric Object: color = " + color + " isFilled = " + isFilled + " dateCreated = " + dateCreated;
     }
 }
