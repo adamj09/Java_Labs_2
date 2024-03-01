@@ -45,4 +45,11 @@ public class Person {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
+
+    public String toString() { // Return all info
+        return "--- Person ---\n - name = " + name + 
+            "\n - address = " + address + 
+            "\n - phoneNumber = " + phoneNumber + 
+            "\n - emailAddress = " + emailAddress;
+    }
 }
