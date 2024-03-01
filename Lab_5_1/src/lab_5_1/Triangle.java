@@ -3,9 +3,9 @@ package lab_5_1;
 public class Triangle extends GeometricObject{
     private double side1 = 1, side2 = 1, side3 = 1;
 
-    Triangle(){} // no-arg
+    Triangle() {} // no-arg
 
-    Triangle(double side1, double side2, double side3, String color, boolean filled){ // all-arg + args for parent
+    Triangle(double side1, double side2, double side3, String color, boolean filled) { // all-arg + args for parent
         super(color, filled);
         this.side1 = side1;
         this.side2 = side2;
@@ -38,17 +38,17 @@ public class Triangle extends GeometricObject{
         this.side3 = side3;
     }
 
-    public double getArea(){
+    public double getArea() {
         // Get area using formula for area of a triangle using 3 sides
         double semiPerimeter = getPerimeter() / 2;
         return Math.sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3));
     }
 
-    public double getPerimeter(){
+    public double getPerimeter() {
         return side1 + side2 + side3; // sum of sides
     }
 
-    public String toString(){
+    public String toString() {
         return "Triangle: side1 = " + side1 + " side2 = " + side2 + " side3 = " + side3; // string containing attributes of triangle
     }
 }

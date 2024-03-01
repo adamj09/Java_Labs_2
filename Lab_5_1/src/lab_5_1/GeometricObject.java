@@ -7,7 +7,7 @@ public class GeometricObject {
     private boolean isFilled;
     private Date dateCreated;
 
-    public GeometricObject(){
+    public GeometricObject() {
         dateCreated = new Date();
     }
 
@@ -42,7 +42,7 @@ public class GeometricObject {
         this.dateCreated = dateCreated;
     }
 
-    public String toString(){ // print attributes of GeometricObject
+    public String toString() { // print attributes of GeometricObject
         return "Geometric Object: color = " + color + " isFilled = " + isFilled + " dateCreated = " + dateCreated;
     }
 }

@@ -1,7 +1,7 @@
 package lab_4_2;
 
 public class Tax {
-    private final int SINGLE_FILER = 0,
+    private static final int SINGLE_FILER = 0,
             MARRIED_JOINTLY_OR_QUALIFYING_WIDOW = 1,
             MARRIED_SEPARATELY = 2,
             HEAD_OF_HOUSEHOLD = 3;
