@@ -23,7 +23,7 @@ public class UserInputHelper {
         return num;
     }
 
-    // Get a double from user that is greater than or less than a critical value
+    // Get a double from user that is greater than or less than a critical value based on the isMinInclusive boolean
     public static double getUserInput(String prompt, String error, double criticalValue, boolean isMinInclusive) { 
         Scanner scanner = new Scanner(System.in);
         double num;
@@ -52,7 +52,7 @@ public class UserInputHelper {
         return num;
     }
 
-    // Get an integer from user that is greater than or less than a critical value (inclusive)
+    // Get an integer from user that is greater than or less than a critical value based on the isMinInclusive boolean
     public static int getUserInput(String prompt, String error, int criticalValue, boolean isMinInclusive) {
         Scanner scanner = new Scanner(System.in);
         int num;
