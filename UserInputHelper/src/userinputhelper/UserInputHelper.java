@@ -6,15 +6,15 @@ import java.util.Scanner;
 input from the terminal. Currently there are only a few basic methods that may be
 altered in the future as seen fit. Generic types for these methods were not used as this 
 was not yet introduced in the course this class is used for, but are probably preferable 
-over the current implementation. On that same note, this should also be a proper library
-but that has also not been introduced. */
+over the current implementation. On that same note, this should also be a proper library,
+and should have error handling, but those topics have also not yet been introduced. */
 public class UserInputHelper {
     // Get a double from user within a specified range (inclusive)
     public static double getUserInput(String prompt, String error, double startInclusive, double endInclusive) {
-        System.out.println(prompt);
         Scanner scanner = new Scanner(System.in);
-        double num = 0;
+        double num;
         do{
+            System.out.println(prompt);
             num = scanner.nextDouble();
             if(num < startInclusive || num > endInclusive){
                 System.out.println(error);
@@ -26,8 +26,7 @@ public class UserInputHelper {
     // Get a double from user that is greater than or less than a critical value
     public static double getUserInput(String prompt, String error, double criticalValue, boolean isMinInclusive) { 
         Scanner scanner = new Scanner(System.in);
-
-        double num = isMinInclusive ? criticalValue + 1 : criticalValue - 1;
+        double num;
         do{
             System.out.println(prompt);
             num = scanner.nextDouble();
@@ -41,10 +40,10 @@ public class UserInputHelper {
 
     // Get an integer from user within a specified range (inclusive)
     public static int getUserInput(String prompt, String error, int startInclusive, int endInclusive) {
-        System.out.println(prompt);
         Scanner scanner = new Scanner(System.in);
-        int num = 0;
+        int num;
         do{
+            System.out.println(prompt);
             num = scanner.nextInt();
             if(num < startInclusive || num > endInclusive){
                 System.out.println(error);
@@ -56,8 +55,7 @@ public class UserInputHelper {
     // Get an integer from user that is greater than or less than a critical value (inclusive)
     public static int getUserInput(String prompt, String error, int criticalValue, boolean isMinInclusive) {
         Scanner scanner = new Scanner(System.in);
-
-        int num = isMinInclusive ? criticalValue + 1 : criticalValue - 1;
+        int num;
         do{
             System.out.println(prompt);
             num = scanner.nextInt();
