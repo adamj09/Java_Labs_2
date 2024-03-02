@@ -8,6 +8,7 @@ public class Lab_5_1 {
     public static void main(String[] args) {
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Triangle Demo\n [2] Polymorphism Demo");
+            // Get choice of demo from user
             int choice = UserInputHelper.getUserInput("Enter a demo to run, 3 to exit: ", "Invalid input.", 1, 3);
             switch (choice) {
                 case 1:
@@ -49,7 +50,7 @@ public class Lab_5_1 {
             "1 202-456-1111", 
             "djt@gmail.com"
         );
-
+        // Create new test person
         Student student = new Student(
             "Christopher Laberge",
             "2689 Chemin de Chambly, Longueuil, Quebec, Canada",
@@ -57,7 +58,7 @@ public class Lab_5_1 {
             "realJoeBiden@gmail.com",
             Student.SENIOR
         );
-
+        // Create new test person
         Employee employee = new Employee(
             "Matthew Cheung",
             "1999 Boulevard Roland-Therrien, Longueuil, Quebec, Canada",
@@ -67,7 +68,7 @@ public class Lab_5_1 {
             1000000,
             new Date()
         );
-
+        // Create new test person
         Faculty faculty = new Faculty(
             "Joe Schlon",
             "1228 Boulevard Cure-Poirer Ouest, Longueuil, Quebec, Canada",
@@ -79,7 +80,7 @@ public class Lab_5_1 {
             new int[][] {{1200, 1300}, {1000, 1100, 1500, 1600}, {0, 0}}, // daily office hours from 12pm to 1pm
             "CEO"
         );
-
+        // Create new test person
         Staff staff = new Staff(
             "Micheal Ox",
             "7410 Boulevard Taschereau, Brossard, Quebec, Canada",
@@ -90,7 +91,7 @@ public class Lab_5_1 {
             new Date(),
             "Chief Money Maker"
         );
-
+        // Print all test objects' toString methods
         System.out.printf("%s\n%s\n%s\n%s\n%s\n", 
             person.toString(), student.toString(), employee.toString(), faculty.toString(), staff.toString());
     }
