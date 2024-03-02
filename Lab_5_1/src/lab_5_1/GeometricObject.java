@@ -12,7 +12,7 @@ public class GeometricObject {
     }
 
     public GeometricObject(String color, boolean isFilled) {
-        this();
+        this(); // Create new date by calling no-arg constructor
         this.color = color;
         this.isFilled = isFilled;
     }
