@@ -3,9 +3,9 @@ package lab_5_1;
 public class Triangle extends GeometricObject{
     private double side1 = 1, side2 = 1, side3 = 1;
 
-    Triangle() {} // no-arg
+    public Triangle() {} // no-arg
 
-    Triangle(double side1, double side2, double side3, String color, boolean filled) { // all-arg + args for parent
+    public Triangle(double side1, double side2, double side3, String color, boolean filled) { // all-arg + args for parent
         super(color, filled);
         this.side1 = side1;
         this.side2 = side2;
