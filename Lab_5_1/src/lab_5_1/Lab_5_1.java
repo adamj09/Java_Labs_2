@@ -2,14 +2,22 @@ package lab_5_1;
 
 import java.util.Date;
 import java.util.Scanner;
-import userinputhelper.UserInputHelper;
 
 public class Lab_5_1 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Triangle Demo\n [2] Polymorphism Demo");
+
+            System.out.println("--- Demos ---\n [1] Triangle Demo\n [2] Polymorphism Demo\n [3] exit");
             // Get choice of demo from user
-            int choice = UserInputHelper.getUserInput("Enter a demo to run, 3 to exit: ", "Invalid input.", 1, 3);
+            //
+            //
+            // int choice = UserInputHelper.getUserInput("Enter a demo to run, 3 to exit: ", "Invalid input.", 1, 3);
+            int choice = input.nextInt();
+            if (choice > 3 || choice < 1){
+                System.out.println("Invalid choice: " + choice);
+                continue;
+            }
             switch (choice) {
                 case 1:
                     triangleDemo();
@@ -30,16 +38,28 @@ public class Lab_5_1 {
         // Get length of each side from user
         double[] sides = new double[3];
         for (int i = 0; i < sides.length; i++) {
-            sides[i] = UserInputHelper.getUserInput("Enter length of side " + (i + 1) + " of the triangle", 
-                "Side length must be greater than 0!", 0, true);
+            System.out.println("Enter length of side " + (i + 1) + " of the triangle" );
+            double sidelength = scanner.nextDouble();
+            if (sidelength <= 0){
+            System.out.println("Sidelength must be greater than 0");
+            i--;
+            continue;
+            }
+            sides[i] = sidelength;
         }
+        if (isValidTriangle(sides[0], sides[1], sides[2]) == false){
+            System.out.println("Invalid triangle");
+            triangleDemo();
 
-        System.out.println("Enter the triangle's colour and fill state: "); // remaining attributes
-        Triangle triangle = new Triangle(sides[0], sides[1], sides[2], scanner.next(), scanner.nextBoolean()); // create triangle
+        }
+        else {
+            System.out.println("Enter the triangle's colour and fill state: "); // remaining attributes
+            Triangle triangle = new Triangle(sides[0], sides[1], sides[2], scanner.next(), scanner.nextBoolean()); // create triangle
 
-        // Print triangle's attributes
-        System.out.printf("--- Triangle Info ---\n%s\nArea: %.2f\nPerimeter: %.2f\nColor: %s\nFilled: %b\nDate Created: %s\n", 
-            triangle.toString(), triangle.getArea(), triangle.getPerimeter(), triangle.getColor(), triangle.isFilled(), triangle.getDateCreated().toString());
+            // Print triangle's attributes
+            System.out.printf("--- Triangle Info ---\n%s\nArea: %.2f\nPerimeter: %.2f\nColor: %s\nFilled: %b\nDate Created: %s\n",
+                    triangle.toString(), triangle.getArea(), triangle.getPerimeter(), triangle.getColor(), triangle.isFilled(), triangle.getDateCreated().toString());
+        }
     }
 
     private static void polymorphismDemo() {
@@ -94,5 +114,9 @@ public class Lab_5_1 {
         // Print all test objects' toString methods
         System.out.printf("%s\n%s\n%s\n%s\n%s\n", 
             person.toString(), student.toString(), employee.toString(), faculty.toString(), staff.toString());
+    }
+
+    public static boolean isValidTriangle(double side1, double side2, double side3) {
+        return side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1;
     }
 }
