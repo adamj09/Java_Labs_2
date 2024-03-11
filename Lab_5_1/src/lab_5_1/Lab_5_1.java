@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Lab_5_1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
         while(true){ // Run app (with menu)
 
             System.out.println("--- Demos ---\n [1] Triangle Demo\n [2] Polymorphism Demo\n [3] exit");
