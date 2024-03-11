@@ -29,9 +29,9 @@ public class Questions {
 
         for(int i = 0; i < list.size(); i++){
             int randIndex = (int)(Math.random() * list.size() - 1);
-            int temp = 
+            int temp = list.get(randIndex);
             list.set(randIndex, list.get(i));
-            list.set(i, list.get(randIndex));
+            list.set(i, temp);
         }
     }
 
@@ -47,5 +47,20 @@ public class Questions {
         }
 
         return sum;
+    }
+
+    // Question 4
+    public static void removeDuplicates(ArrayList<Integer> list) {
+        if(list.size() == 0 || list.size() == 1 || list == null) {
+            return;
+        }
+        
+        for(int i = 0; i < list.size(); i++) {
+            for(int j = 0; j < list.size(); j++){
+                if(list.get(i) == list.get(j)) {
+                    list.remove(j);
+                }
+            }
+        }
     }
 }
