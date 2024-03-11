@@ -29,13 +29,19 @@ public class Questions {
 
         for(int i = 0; i < list.size(); i++){
             int randIndex = (int)(Math.random() * list.size() - 1);
+            int temp = 
+            list.set(randIndex, list.get(i));
+            list.set(i, list.get(randIndex));
         }
     }
 
     // Question 3
     public static double sum(ArrayList<Double> list){
-        double sum = 0;
+        if(list.size() == 0 || list == null) {
+            return 0;
+        }
 
+        double sum = 0;
         for(double number : list) {
             sum += number;
         }
