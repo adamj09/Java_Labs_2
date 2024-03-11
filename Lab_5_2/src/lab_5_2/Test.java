@@ -7,12 +7,13 @@ public class Test {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Triangle Demo\n [2] Polymorphism Demo\n [5] exit");
+            System.out.println("--- Demos ---\n [1] Maximum Value Demo\n [2] Shuffle Values Demo\n "+ 
+                "[3] Sum Values Demo\n [4] Remove Duplicate Values Demo\n [5] exit");
             
             // Get choice of demo from user
             int choice = input.nextInt();
             if (choice > 5 || choice < 1){
-                System.out.println("Invalid choice: " + choice);
+                System.out.println("Invalid choice: " + choice + "\nPlease choose a value between 1 and 5.");
                 continue;
             }
 
@@ -36,11 +37,10 @@ public class Test {
         }
     }
 
-    public static void maxTest() {
-        ArrayList<Integer> numbers = new ArrayList<>();
+    public static void maxTest() { // Get numbers from user then find and display max of input numbers
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter some numbers to sum, input ends with 0: ");
-
+        System.out.println("Enter some numbers to find the max value, input ends with 0: ");
+        ArrayList<Integer> numbers = new ArrayList<>();
         int value;
         do {
             value = scanner.nextInt();
@@ -50,7 +50,7 @@ public class Test {
         System.out.println("Max value: " + Questions.max(numbers));
     }
 
-    public static void shuffleTest() {
+    public static void shuffleTest() { // Get numbers from user then shuffle and display shuffled numbers
         ArrayList<Integer> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ten numbers: ");
@@ -63,11 +63,12 @@ public class Test {
         
         System.out.print("Shuffled numbers: ");
         for(int i : numbers) {
-            System.out.println(i + " ");
+            System.out.print(i + " ");
         }
+        System.out.println();
     }
 
-    public static void sumTest() {
+    public static void sumTest() { // Get numbers from user then sum and display that sum
         ArrayList<Double> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter five numbers: ");
@@ -78,7 +79,7 @@ public class Test {
         System.out.println("Sum of the numbers: " + Questions.sum(numbers));
     }
 
-    public static void removeDuplicatesTest(){
+    public static void removeDuplicatesTest(){ // Get numbers from user, remove duplicate values, then display unique values
         ArrayList<Integer> numbers = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter ten numbers: ");
@@ -91,7 +92,8 @@ public class Test {
         
         System.out.print("Unique numbers: ");
         for(int i : numbers) {
-            System.out.println(i + " ");
+            System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
