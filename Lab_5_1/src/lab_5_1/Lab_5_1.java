@@ -42,9 +42,9 @@ public class Lab_5_1 {
             System.out.println("Enter length of side " + (i + 1) + " of the triangle" );
             double sidelength = scanner.nextDouble();
             if (sidelength <= 0){
-            System.out.println("Sidelength must be greater than 0");
-            i--;
-            continue;
+                System.out.println("Sidelength must be greater than 0");
+                i--;
+                continue;
             }
             sides[i] = sidelength;
         }
