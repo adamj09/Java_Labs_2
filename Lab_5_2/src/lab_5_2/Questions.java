@@ -60,7 +60,7 @@ public class Questions {
         }
         // Check for each number in the list if there is a duplicate, if so, remove the duplicate from the list
         for(int i = 0; i < list.size(); i++) {
-            for(int j = 0; j < list.size(); j++){
+            for(int j = i; j < list.size(); j++){
                 if(list.get(i) == list.get(j) && j != i) {
                     list.remove(j);
                 }
