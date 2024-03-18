@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
@@ -39,7 +40,19 @@ public class Test {
     }
 
     public static void arraySortingTest() { // Get numbers from user then shuffle and display shuffled numbers
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 5 numbers");
+        ArrayList<Integer> numbers = new ArrayList<>();
 
+        for (int i = 0; i < 5; i++) {
+            numbers.add(scanner.nextInt());
+        }
+        Lab_6_1_Questions.sort(numbers);
+        for (Integer number : numbers) {
+            System.out.print(number + " ");
+
+        }
+        System.out.println();
     }
 
     public static void combiningTwoArraysTest() { // Get numbers from user then sum and display that sum
