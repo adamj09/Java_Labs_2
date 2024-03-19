@@ -18,7 +18,7 @@ public class Q1 {
                 columnIndices.add(i);
                 previousColumnSum = columnSum;
             }
-            else if(columnSum == previousColumnSum) { // Add to index to list if there are 2 or more maxes
+            else if(columnSum == previousColumnSum) { // Add index to list if there are 2 or more maxes
                 columnIndices.add(i);
             }
         }
@@ -41,7 +41,7 @@ public class Q1 {
                 rowIndices.add(i);
                 previousRowSum = rowSum;
             }
-            else if(rowSum == previousRowSum) { // Add to index to list if there are 2 or more maxes
+            else if(rowSum == previousRowSum) { // Add index to list if there are 2 or more maxes
                 rowIndices.add(i);
             }
         }
