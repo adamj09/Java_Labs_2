@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Union {
+    // Test for the two below methods
     public static void runUnion(){
         // Get arrays of integers from user
         ArrayList<Integer> array1 = new ArrayList<>();
@@ -31,13 +32,15 @@ public class Union {
         System.out.println(); // Spacing
     }
 
+    // Return new array that is two concatenated arrays
     public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
         ArrayList<Integer> union = new ArrayList<>();
         union.addAll(list1);
         union.addAll(list2);
-        return union; // Return new array that is two concatenated arrays
+        return union;
     }
 
+    // Fill an array of integers with user input
     public static void fillIntegerArray(ArrayList<Integer> array, int size, String prompt) {
         Scanner input = new Scanner(System.in);
 

@@ -9,6 +9,8 @@ public class Calculator {
         while(true) {
             double num1 = 1, num2 = 1;
             String operator = "";
+
+            // Get user's input
             while(true) {
                 try {
                     num1 = input.nextDouble();
@@ -22,6 +24,7 @@ public class Calculator {
                 }
             }
             
+            // Determine operation to be carried out based on user's operator of choice
             switch (operator) {
                 case "+":
                     System.out.println(" = " + (num1 + num2));
@@ -46,11 +49,12 @@ public class Calculator {
             }
             System.out.println("Calculation complete. Enter \"exit\" to exit.");
             if(input.next().toLowerCase() == "exit") {
-                System.exit(0);
+                break; // Break out of the while loop upon the user entering "exit"
             }
         }
     }
-
+    // Return quotient of two doubles. Java by default treats division of doubles by 0 as in limits,
+    // which is not the intention here, which is why an exception is thrown instead of returning Infinity.
     public static double divide(double dividend, double divisor) throws ArithmeticException {
         if(divisor == 0) {
             throw new ArithmeticException("Cannot divide by zero.");
