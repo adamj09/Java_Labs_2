@@ -44,8 +44,10 @@ public class Calculator {
                     System.out.println("Invalid operator.");
                     break;
             }
-            System.out.println("Operation complete. Enter \"exit\" to exit");
-            input.next();
+            System.out.println("Calculation complete. Enter \"exit\" to exit.");
+            if(input.next().toLowerCase() == "exit") {
+                System.exit(0);
+            }
         }
     }
 
