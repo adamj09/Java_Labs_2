@@ -9,9 +9,9 @@ public class Union {
     public static void runUnion(){
         // Get arrays of integers from user
         ArrayList<Integer> array1 = new ArrayList<>();
-        fillIntegerArray(array1, 5, "Enter five integers for array 1: ");
+        fillIntegerArray(array1, 5, "Enter five integers separated by spaces for array 1: ");
         ArrayList<Integer> array2 = new ArrayList<>();
-        fillIntegerArray(array2, 5, "Enter five integers for array 2: ");
+        fillIntegerArray(array2, 5, "Enter five integers separated by spaces for array 2: ");
 
         // Display Original Arrays
         System.out.print("Array 1: ");
