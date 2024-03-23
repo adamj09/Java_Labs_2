@@ -12,7 +12,8 @@ public class Calculator {
 
         System.out.println("Here's a basic calculator. Enter \"help\" for the list of commands and operators.");
 
-        while(true) {
+        boolean run = true;
+        while(run) {
             String input = scanner.nextLine();
 
             switch (input.toString().toLowerCase()) {
@@ -23,7 +24,7 @@ public class Calculator {
                     previousAnswer = null;
                     break;
                 case "e": // Exit the calculator
-                    System.exit(0);
+                    run = false;
                     break;
                 default: // Run an operation
                     try {
