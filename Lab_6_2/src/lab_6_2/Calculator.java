@@ -22,6 +22,7 @@ public class Calculator {
                     break;
                 case "c": // Clear the previous answer
                     previousAnswer = null;
+                    System.out.println("Previous answer cleared.");
                     break;
                 case "e": // Exit the calculator
                     run = false;
@@ -43,6 +44,7 @@ public class Calculator {
         }
     }
 
+    // Given some input, parse input then calculate based on result of parsing
     private static Double calculate(String input) throws NullPointerException {
         ArrayList<String> parsedInput = new ArrayList<>();
         try {
@@ -95,6 +97,7 @@ public class Calculator {
         }
     }
 
+    // Extract numbers and operators from a string for use in a calculation
     private static ArrayList<String> parseInput(String input) throws NumberFormatException {
         ArrayList<String> inputArray = new ArrayList<>();
 
@@ -157,7 +160,7 @@ public class Calculator {
             }
         }
 
-        // Find Operator, if multiple operators are found, return null
+        // Find Operator, if multiple operators are found, throw error
         boolean operatorFound = false;
         for(int i = 0; i < inputArray.size(); i++) {
             if(!isNumber(inputArray.get(i)) && !inputArray.get(i).equals(".")){
@@ -181,6 +184,7 @@ public class Calculator {
         return dividend / divisor;
     }
 
+    // Return whether a given string is a number
     private static boolean isNumber(String string) {
         try {
             Double.parseDouble(string);
@@ -191,14 +195,15 @@ public class Calculator {
         }
     }
 
+    // Display help menu
     private static void displayHelp() {
         System.out.printf("""
         --- Commands ---
-         [c] Clear
+         [c] Clear (Must start fresh calculation after a clear.)
          [e] Exit
         --- Supported Operators ---
          [+] Addition
-         [-]  Subtraction 
+         [-] Subtraction 
          [*] Multiplication
          [/] Division
         --- How to Use Operators ---
