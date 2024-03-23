@@ -111,18 +111,16 @@ public class Calculator {
             }
 
             // Add last number
-            if(i == input.length() - 1) { 
-                if(digits.size() > 0) {
-                    // Handle negatives
-                    String number =  input.charAt(i - (digits.size())) == '-' ? "-": "";
+            if(i == input.length() - 1 && digits.size() > 0) {
+                // Handle negatives
+                String number =  input.charAt(i - (digits.size())) == '-' ? "-": "";
 
-                    for(int j = 0; j < digits.size(); j++) { // Combine digits to make one number
-                        number += digits.get(j).intValue() + "";
-                    }
-
-                    digits.clear();
-                    parsed.add(number);
+                for(int j = 0; j < digits.size(); j++) { // Combine digits to make one number
+                    number += digits.get(j).intValue() + "";
                 }
+
+                digits.clear();
+                parsed.add(number);
             }
         }
         return parsed;
