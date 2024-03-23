@@ -26,23 +26,32 @@ public class Calculator {
                     System.exit(0);
                     break;
                 default: // Run an operation
-                    Double answer = calculate(input);
-                    if(answer != null) {
-                        previousAnswer = answer;
-                        System.out.printf(" = %.10f\n", previousAnswer);
+                    try {
+                        Double answer = calculate(input);
+                        if(answer > Double.MAX_VALUE) {
+                            System.out.println("Error: overflow.");
+                        }
+                        else {
+                            previousAnswer = answer;
+                            System.out.printf(" = %.10f\n", previousAnswer);
+                        }
                     }
+                    catch (Exception ex){}
                     break;
             }
         }
     }
 
-    private static Double calculate(String input) {
-        ArrayList<String> parsedInput = parseInput(input);
-        // Make sure there were no parsing errors
-        if(parsedInput == null) {
-            System.out.println("Invalid input. Bad formatting. Type \"help\" for more information.");
-            return null;
+    private static Double calculate(String input) throws NullPointerException {
+        ArrayList<String> parsedInput = new ArrayList<>();
+        try {
+            parsedInput = parseInput(input);
         }
+        catch (NumberFormatException ex) {
+            System.out.println("Error: invalid input. Bad formatting. Type \"help\" for more information.");
+            throw new NullPointerException();
+        }
+        // Make sure there were no parsing errors
 
         String operator = "";
         double value1 = 0, value2 = 0;
@@ -60,8 +69,8 @@ public class Calculator {
             operator = parsedInput.get(1);
         }
         else {
-            System.out.println("Invalid input. Bad formatting. Type \"help\" for more information.");
-            return null;
+            System.out.println("Error: invalid input. Bad formatting. Type \"help\" for more information.");
+            throw new NullPointerException();
         }
 
         // Return result of operation
@@ -77,15 +86,15 @@ public class Calculator {
                     return divide(value1, value2);
                 }
                 catch(ArithmeticException ex) {
-                    System.out.println("Cannot divide by zero.");
+                    System.out.println("Error: cannot divide by zero.");
                 }
             default:
-                System.out.println("Invalid operator.");
-                return null;
+                System.out.println("Error: invalid operator.");
+                throw new NullPointerException();
         }
     }
 
-    private static ArrayList<String> parseInput(String input) {
+    private static ArrayList<String> parseInput(String input) throws NumberFormatException {
         ArrayList<String> inputArray = new ArrayList<>();
 
         // Split input into array for easier parsing
@@ -105,7 +114,7 @@ public class Calculator {
         }
         // If no operator is found, or if an operator is found at the end of input, return null
         if(!containsOperator || !isNumber(inputArray.get(inputArray.size() - 1))) {
-            return null;
+            throw new NumberFormatException();
         }
 
         String digits = "0"; // Store digits
@@ -114,7 +123,7 @@ public class Calculator {
         // Parse numbers
         for(int i = 0; i < inputArray.size(); i++) {
             if(inputArray.get(i).equals(".") && digits.contains(".")) { // Number contains two decimals, abort.
-                return null;
+                throw new NumberFormatException();
             }
             else if(isNumber(inputArray.get(i)) || inputArray.get(i).equals(".")) { // Add digit or decimal
                 digits += inputArray.get(i);
@@ -152,7 +161,7 @@ public class Calculator {
         for(int i = 0; i < inputArray.size(); i++) {
             if(!isNumber(inputArray.get(i)) && !inputArray.get(i).equals(".")){
                 if(operatorFound == true) {
-                    return null;
+                    throw new NumberFormatException("Error: invalid input. Bad formatting. Type \"help\" for more information.");
                 }
                 parsed.add(inputArray.get(i));
                 operatorFound = true;
