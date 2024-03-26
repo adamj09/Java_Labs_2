@@ -17,7 +17,7 @@ public class HexToDecimal {
             return ch - '0';
         }
         else {
-            throw new NumberFormatException();
+            throw new NumberFormatException("Value must be a hexadecimal value!");
         }
     }
 }
