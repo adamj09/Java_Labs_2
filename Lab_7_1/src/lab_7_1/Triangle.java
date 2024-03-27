@@ -57,6 +57,4 @@ public class Triangle extends GeometricObject{
     public String toString() {
         return "Triangle: side1 = " + side1 + " side2 = " + side2 + " side3 = " + side3; // string containing attributes of triangle
     }
-
-
 }
