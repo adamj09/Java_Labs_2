@@ -13,3 +13,6 @@
 
 # Ignore txt files created for IO labs
 *.txt
+
+# Misc
+*.DS_Store
