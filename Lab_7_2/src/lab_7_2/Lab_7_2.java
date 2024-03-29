@@ -12,6 +12,7 @@ public class Lab_7_2 {
 
     private static ArrayList<Integer> readIntsFromFile(File file) {
         Scanner scanner;
+
         try {
             scanner = new Scanner(file);
         }
@@ -29,6 +30,7 @@ public class Lab_7_2 {
                 scanner.next();
             }
         }
+        scanner.close();
         return content;
     }
 
