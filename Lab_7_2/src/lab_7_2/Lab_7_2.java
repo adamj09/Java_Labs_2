@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 public class Lab_7_2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        
+
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Random Integers\n [2] Random Doubles\n [3] Animal Names\n [4] Exit");
             // Get choice of demo from user
