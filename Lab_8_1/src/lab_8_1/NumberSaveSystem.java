@@ -2,9 +2,8 @@ package lab_8_1;
 
 import java.io.IOException;
 
-public class Q2 {
-    public static void randNumTest() {
-        String valuesPath = "Lab_8_1/Q2.txt", extremesPath = "Lab_8_1/Q2Res.txt";
+public class NumberSaveSystem {
+    public static void randNumTest(String valuesPath, String extremesPath) {
         try {
             // First 5 random numbers
             saveInts(valuesPath, genRandInts(10, 10, 5));
@@ -34,7 +33,7 @@ public class Q2 {
         }
 
         try {
-            Main.writeToFile(filepath, content);
+            FileSystem.writeToFile(filepath, content, true);
         }
         catch(IOException ex) {
             System.out.println("Failed to write to file.");
@@ -43,7 +42,7 @@ public class Q2 {
 
     private static int[] minMaxFromFile(String filepath) throws IOException {
         // Parse values from file
-        String[] stringValues = Main.readFile(filepath).split(" ");
+        String[] stringValues = FileSystem.readFile(filepath).split(" ");
         int[] values = new int[stringValues.length];
         for(int i = 0; i < values.length; i++) {
             values[i] = Integer.parseInt(stringValues[i]);

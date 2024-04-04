@@ -86,7 +86,7 @@ public class Lab_7_2 {
             String newName = userInput.next().toLowerCase();
 
             if(newName.equals("exit")) { // Exit loop
-                break;
+                return;
             }
 
             if(names.contains(newName)) { // If item is found, do nothing
@@ -107,7 +107,6 @@ public class Lab_7_2 {
             // Overwrite file with updated content
             overwriteFile("Lab_7_2/Q3.txt", content);
         }
-        userInput.close();
     }
 
     // Gather individual words from a text file into an array list
