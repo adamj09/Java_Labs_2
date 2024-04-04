@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class Lab_8_1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String[] filepaths = {"Lab_8_1/Q2.txt", "Lab_8_1/Q2Res.txt", "Lab_8_1/Q3.txt"};
