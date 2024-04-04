@@ -27,7 +27,7 @@ public class Main {
                     case 4: // Clear all files for further testing
                         try {
                             for(String path : filepaths) {
-                                FileSystem.clearFile(path);
+                                FileSystem.writeToFile(path, "", false);
                             }
                             System.out.println("All files cleared!");
                         }

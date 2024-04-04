@@ -56,10 +56,6 @@ public class FileSystem {
         return readFile(filepath).split("\n").length;
     }
 
-    public static void clearFile(String filepath) throws IOException {
-        new FileWriter(filepath).close();;
-    }
-
     public static void writeToFile(String filepath, String content, boolean append) throws IOException {
         FileWriter file = new FileWriter(filepath, append);
         file.append(content);
