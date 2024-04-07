@@ -1,44 +1,51 @@
 package lab_8_2;
 
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lab_8_2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String[] filepaths = {"Lab_8_1/Q2.txt", "Lab_8_1/Q2Res.txt", "Lab_8_1/Q3.txt"};
+        String[] filepaths = {"Lab_8_2/names.txt", "Lab_8_2/newNames.txt", "Lab_8_2/original.txt", "Lab_8_2/replaced.txt"};
 
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Fraction Creator\n [2] Remove from File Test\n" +
-                " [3] File Info Test\n [4] Clear All Files\n [5] Exit");
+                " [3] Replace Text in File Test\n [4] Clear All Files\n [5] Exit");
             // Get choice of demo from user
             try {
                 switch (input.nextInt()) {
                     case 1:
-                        fractionTest();
+                        Fraction.fractionTest();
                         break;
                     case 2:
                         try {
-                            FileSystem.removeFromFileTest("Lab_8_2/names.txt");
+                            FileSystem.removeFromFileTest(filepaths[0], filepaths[1]); // Save new list with removed content into new file
+                            FileSystem.writeToFile(filepaths[0], FileSystem.readFile(filepaths[1]), false); // Update old file with new file's content
                         }
-                        catch(FileNotFoundException ex) {
+                        catch(IOException ex) {
                             System.out.println(ex);
                         }
                         break;
                     case 3:
-
+                        try {
+                            FileSystem.replaceInFileTest(filepaths[2], filepaths[3]); // Save new list with replaced content into new file
+                            FileSystem.writeToFile(filepaths[2], FileSystem.readFile(filepaths[3]), false); // Update old file with new file's content
+                        }
+                        catch(IOException ex) {
+                            System.out.println(ex);
+                        }
                         break;
                     case 4: // Clear all files for further testing
-                        // try {
-                        //     for(String path : filepaths) {
-                        //         FileSystem.writeToFile(path, "", false);
-                        //     }
-                        //     System.out.println("All files cleared!");
-                        // }
-                        // catch(IOException ex) {
-                        //     System.out.println(ex);
-                        // }
+                        try {
+                            for(String path : filepaths) {
+                                FileSystem.writeToFile(path, "", false);
+                            }
+                            System.out.println("All files cleared!");
+                        }
+                        catch(IOException ex) {
+                            System.out.println(ex);
+                        }
                         break;
                     case 5:
                         input.close();
@@ -53,21 +60,6 @@ public class Lab_8_2 {
                 input.nextLine();
             }
             System.out.println();
-        }
-    }
-
-    private static void fractionTest() {
-        Scanner input = new Scanner(System.in);
-        while(true) {
-            System.out.println("Enter an integer for the numerator and denominator respectively: ");
-            try {
-                Fraction fraction = new Fraction(input.nextInt(), input.nextInt());
-                System.out.println("Fraction is: " + fraction.getNumerator() + " / " + fraction.getDenominator());
-                break;
-            }
-            catch(NullDenominatorException ex) {
-                System.err.println(ex);
-            }
         }
     }
 }
