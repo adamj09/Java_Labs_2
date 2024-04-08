@@ -19,7 +19,7 @@ public class Lab_8_1 {
                         BinaryConverter.binToDecTest();
                         break;
                     case 2:
-                    NumberSaveSystem.randNumTest(filepaths[0], filepaths[1]);
+                        NumberSaveSystem.randNumTest(filepaths[0], filepaths[1]);
                         break;
                     case 3:
                         FileSystem.fileTest(filepaths[2]);

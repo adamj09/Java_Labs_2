@@ -22,6 +22,7 @@ public class Lab_8_2 {
                         try {
                             FileSystem.removeFromFileTest(filepaths[0], filepaths[1]); // Save new list with removed content into new file
                             FileSystem.writeToFile(filepaths[0], FileSystem.readFile(filepaths[1]), false); // Update old file with new file's content
+                            System.out.println("Content removed!");
                         }
                         catch(IOException ex) {
                             System.out.println(ex);
@@ -31,6 +32,7 @@ public class Lab_8_2 {
                         try {
                             FileSystem.replaceInFileTest(filepaths[2], filepaths[3]); // Save new list with replaced content into new file
                             FileSystem.writeToFile(filepaths[2], FileSystem.readFile(filepaths[3]), false); // Update old file with new file's content
+                            System.out.println("Content replaced!");
                         }
                         catch(IOException ex) {
                             System.out.println(ex);
