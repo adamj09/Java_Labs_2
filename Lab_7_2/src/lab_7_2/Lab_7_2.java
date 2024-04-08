@@ -81,7 +81,7 @@ public class Lab_7_2 {
         ArrayList<String> names = readStringsFromFile(overwriteFile("Lab_7_2/Q3.txt", "jaguar tiger dog elephant iguana crane piranha cat opossum bear"));
         
         Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter the name of some animals."); // Prompt user
+        System.out.println("Enter the name of some animals to add to the list. Type \"exit\" to quit."); // Prompt user
         while(true) {
             String newName = userInput.next().toLowerCase();
 
