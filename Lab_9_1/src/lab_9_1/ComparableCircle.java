@@ -6,8 +6,8 @@ public class ComparableCircle extends Circle implements Comparable {
     }
     
     public int compareTo(Object object) {
-        if(object instanceof GeometricObject) {
-            
+        if(object instanceof ComparableCircle || object instanceof ComparableRectangle) {
+            // return 0;
         }
         throw new IllegalArgumentException();
     }
