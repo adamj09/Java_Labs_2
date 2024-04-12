@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import lab_9_1.Shapes.GeometricObject;
 
-public class Compare {
+public class CompareShapes {
     public static void compareShapes() {
         Scanner userInput = new Scanner(System.in);
 
