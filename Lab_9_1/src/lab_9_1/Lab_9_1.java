@@ -1,14 +1,16 @@
 package lab_9_1;
 
-import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import lab_9_1.Comparison.Compare;
+import lab_9_1.Shapes.Triangle;
 
 public class Lab_9_1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Triangle Test\n [2] \n "+ 
+            System.out.println("--- Demos ---\n [1] Triangle Test\n [2] Compare Shapes\n "+ 
                 "[3] \n [4] ");
             // Get choice of demo from user
             try {
@@ -18,7 +20,7 @@ public class Lab_9_1 {
                         System.out.println();
                         break;
                     case 2:
-
+                        Compare.compareShapes();
                         System.out.println();
                         break;
                     case 3:
@@ -39,7 +41,6 @@ public class Lab_9_1 {
                 continue;
             }
         }
-
     }
     
     private static void triangleTest() {

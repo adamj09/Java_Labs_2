@@ -1,5 +1,6 @@
-package lab_9_1;
+package lab_9_1.Shapes;
 
+// This class was provided by M.D. Istiaque Shahriar
 public abstract class GeometricObject {
     private String color = "white";
     private boolean filled;

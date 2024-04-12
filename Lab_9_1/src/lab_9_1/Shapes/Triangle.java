@@ -1,9 +1,11 @@
-package lab_9_1;
+package lab_9_1.Shapes;
+
+import lab_9_1.IllegalTriangleException;
 
 public class Triangle extends GeometricObject {
     private double side1, side2, side3;
 
-    Triangle(double side1, double side2, double side3, String colour, boolean filled) throws IllegalTriangleException {
+    public Triangle(double side1, double side2, double side3, String colour, boolean filled) throws IllegalTriangleException {
         super(colour, filled);
         if(side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
             throw new IllegalTriangleException(side1, side2, side3, 
