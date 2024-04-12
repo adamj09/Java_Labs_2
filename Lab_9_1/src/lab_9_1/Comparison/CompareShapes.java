@@ -7,14 +7,14 @@ import java.util.Scanner;
 import lab_9_1.Shapes.GeometricObject;
 
 public class CompareShapes {
+    // Note: This whole method is overly complicated. 
+    // Should instead just implement compareTo method
+    // in the GeometricObject class then make two GeometricObjects to simplify. 
+    // However, lab instructions require the compareTo implementation method 
+    // to be in ComparableCircle and ComparableRectangle classes.
     public static void compareShapes() {
         Scanner userInput = new Scanner(System.in);
 
-        // Note: This whole method is overly complicated. 
-        // Should instead just implement compareTo method
-        // in the GeometricObject class then make two GeometricObjects to simplify. 
-        // However, lab instructions require the compareTo implementation method 
-        // to be in ComparableCircle and ComparableRectangle classes.
         ArrayList<ComparableCircle> circles = new ArrayList<>();
         ArrayList<ComparableRectangle> rectangles = new ArrayList<>();
 
