@@ -42,6 +42,6 @@ public class Rectangle extends GeometricObject {
     }
 
     public String toString() {
-        return "rectangle of dimension: " + side1 + " by " + side2;
+        return "rectangle of {dimensions = " + side1 + " by " + side2 + ", area = " + getArea() + ", perimeter = " + getPerimeter() + "}";
     }
 }

@@ -30,6 +30,6 @@ public class Circle extends GeometricObject {
     }
 
     public String toString() {
-        return "circle of radius = " + radius;
+        return "circle of {radius = " + radius + ", area = " + getArea() + ", perimeter = " + getPerimeter() + "}";
     }
 }
