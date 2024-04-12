@@ -56,7 +56,7 @@ public class CompareShapes {
             comparedShapes.add(circles.get(1));
         }
         else if(circles.size() == 0) { // If there are no circles being compared
-            result = rectangles.get(0).compareTo(rectangles.get(0));
+            result = rectangles.get(0).compareTo(rectangles.get(1));
             comparedShapes.add(rectangles.get(0));
             comparedShapes.add(rectangles.get(1));
         }
