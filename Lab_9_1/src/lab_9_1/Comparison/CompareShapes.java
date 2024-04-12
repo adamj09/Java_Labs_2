@@ -34,6 +34,8 @@ public class CompareShapes {
                         rectangles.add(new ComparableRectangle(userInput.nextDouble(), userInput.nextDouble(), "White", false));
                     }
                     else { // Throw error if a circle or rectangle is not input as shape name
+                        circles.clear();
+                        rectangles.clear();
                         throw new IllegalArgumentException("Invalid shape name: " + shapeNames[i]);
                     }
                 }
