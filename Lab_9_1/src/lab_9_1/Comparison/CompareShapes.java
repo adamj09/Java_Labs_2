@@ -1,6 +1,7 @@
 package lab_9_1.Comparison;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import lab_9_1.Shapes.GeometricObject;
@@ -40,6 +41,9 @@ public class CompareShapes {
             }
             catch(IllegalArgumentException ex) {
                 System.out.println(ex);
+            }
+            catch(InputMismatchException ex) {
+                System.err.println(ex);
             }
         }
         // See note above for the cause of this over-engineered crap, better than making a method for each combo though.

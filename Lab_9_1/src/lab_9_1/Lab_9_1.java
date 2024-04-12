@@ -3,7 +3,7 @@ package lab_9_1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import lab_9_1.Comparison.Compare;
+import lab_9_1.Comparison.CompareShapes;
 import lab_9_1.Shapes.Triangle;
 
 public class Lab_9_1 {
@@ -20,7 +20,7 @@ public class Lab_9_1 {
                         System.out.println();
                         break;
                     case 2:
-                        Compare.compareShapes();
+                        CompareShapes.compareShapes();
                         System.out.println();
                         break;
                     case 3:
