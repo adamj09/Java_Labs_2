@@ -70,7 +70,7 @@ public class CompareShapes {
             System.out.println("These shapes have the same area!");
             return;
         }
-        System.out.printf("%s has a %s area than %s", 
+        System.out.printf("%s has a %s area than %s\n", 
             comparedShapes.get(0).toString(), result == 1 ? "greater" : "lesser", comparedShapes.get(1).toString());
     }
 }
