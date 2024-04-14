@@ -32,12 +32,12 @@ public class Lab_9_1 {
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
+                        System.err.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
                         break;
                 }
             }
             catch(InputMismatchException ex) {
-                System.out.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
+                System.err.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
                 userInput.nextLine();
                 continue;
             }
@@ -86,7 +86,7 @@ public class Lab_9_1 {
             average(values);
         }
         catch(IllegalArgumentException ex) {
-            System.err.println("Invalid list of integers!");
+            System.err.println(ex);
         }
     }
 
