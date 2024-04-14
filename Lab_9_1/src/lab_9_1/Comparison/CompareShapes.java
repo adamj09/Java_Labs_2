@@ -10,8 +10,8 @@ public class CompareShapes {
     // Note: This whole method is overly complicated. 
     // Should instead just implement compareTo method
     // in the GeometricObject class then make two GeometricObjects to simplify. 
-    // However, lab instructions require the compareTo implementation method 
-    // to be in ComparableCircle and ComparableRectangle classes.
+    // However, lab instructions require the compareTo method implementation
+    // to be in the ComparableCircle and ComparableRectangle classes.
     public static void compareShapes() {
         Scanner userInput = new Scanner(System.in);
 
