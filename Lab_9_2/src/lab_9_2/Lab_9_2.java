@@ -7,13 +7,13 @@ public class Lab_9_2 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Triangle Test\n [2] Average Test \n "+ 
-                "[3] Compare Shapes\n [4] Exit");
+            System.out.println("--- Demos ---\n [1] Colorable Test\n [2] \n "+ 
+                "[3] \n [4] Exit");
             // Get choice of demo from user
             try {
                 switch (userInput.nextInt()) {
                     case 1:
-                       
+                        Q1Driver.colorableTest();
                         System.out.println();
                         break;
                     case 2:
