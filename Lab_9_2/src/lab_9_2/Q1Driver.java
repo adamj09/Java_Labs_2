@@ -22,9 +22,16 @@ public class Q1Driver {
         }
 
         for(int i = 0; i < shapes.length; i++) {
-            System.out.println("Shape " + (i + 1) + "'s area: " + shapes[i].getArea());
             if(shapes[i] instanceof Colorable) {
+                System.out.print("Shape " + (i + 1) + ": ");
                 ((Colorable)shapes[i]).howToColor();
+            }
+        }
+
+        for(int i = 0; i < shapes.length; i++) {
+            System.out.println("--- Shape " + (i + 1) + " Info ---");
+            if(shapes[i] instanceof Square) {
+                System.out.println(((Square)shapes[i]).toString());
             }
         }
     }

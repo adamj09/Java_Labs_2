@@ -34,7 +34,12 @@ public class Square extends GeometricObject implements Colorable {
 
     public void howToColor() {
         Scanner userInput = new Scanner(System.in);
-        System.out.println("Colour all four sides with this color: ");
+        System.out.println("Color all four sides with this color: ");
         this.setColor(userInput.nextLine());
+    }
+
+    public String toString() {
+        return "Square with:\n sidelength: " + sideLength + "\n area: " + getArea() + 
+            "\n perimeter: " + getPerimeter() + "\n color: " + this.getColor() + "\n filled: " + this.isFilled();
     }
 }
