@@ -1,4 +1,4 @@
-package lab_9_2;
+package src.lab_9_2;
 
 // This class was provided by M.D. Istiaque Shahriar
 public abstract class GeometricObject {
@@ -55,4 +55,5 @@ public abstract class GeometricObject {
   
     /** Abstract method getPerimeter */
     public abstract double getPerimeter();
-  }
+
+}

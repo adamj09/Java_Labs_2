@@ -1,4 +1,4 @@
-package lab_9_2;
+package src.lab_9_2;
 
 import java.util.Scanner;
 
@@ -42,4 +42,5 @@ public class Square extends GeometricObject implements Colorable {
         return "Square with:\n sidelength: " + sideLength + "\n area: " + getArea() + 
             "\n perimeter: " + getPerimeter() + "\n color: " + this.getColor() + "\n filled: " + this.isFilled();
     }
+
 }
