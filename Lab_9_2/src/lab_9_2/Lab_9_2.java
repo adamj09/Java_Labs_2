@@ -7,7 +7,7 @@ public class Lab_9_2 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Colorable Test\n [2] \n "+ 
+            System.out.println("--- Demos ---\n [1] Colorable Test\n [2] Octogon Test \n "+ 
                 "[3] Circle Test \n [4] Exit");
             // Get choice of demo from user
             try {
