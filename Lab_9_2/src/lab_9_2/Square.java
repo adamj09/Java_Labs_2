@@ -1,6 +1,5 @@
 package lab_9_2;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Square extends GeometricObject implements Colorable {
@@ -10,7 +9,10 @@ public class Square extends GeometricObject implements Colorable {
         this.sideLength = 0;
     }
 
-    Square(double sideLength) {
+    Square(double sideLength) throws IllegalArgumentException {
+        if(sideLength < 0) {
+            throw new IllegalArgumentException("Invalid");
+        }
         this.sideLength = sideLength;
     }
 
