@@ -8,10 +8,11 @@ public class Q1Driver {
         Scanner userInput = new Scanner(System.in);
         GeometricObject[] shapes = new GeometricObject[5];
 
-        for(int i = 0; i < shapes.length; i++) {
+        for(int i = 0; i < shapes.length;) {
             System.out.printf("Enter the side length of square " + (i + 1) + ": ");
             try {
                 shapes[i] = new Square(userInput.nextDouble());
+                i++;
             }
             catch(IllegalArgumentException ex) {
                 System.out.println(ex);

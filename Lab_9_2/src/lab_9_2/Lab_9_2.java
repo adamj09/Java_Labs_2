@@ -8,7 +8,7 @@ public class Lab_9_2 {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Colorable Test\n [2] \n "+ 
-                "[3] \n [4] Exit");
+                "[3] Circle Test \n [4] Exit");
             // Get choice of demo from user
             try {
                 switch (userInput.nextInt()) {
@@ -17,11 +17,11 @@ public class Lab_9_2 {
                         System.out.println();
                         break;
                     case 2:
-                       
+                        
                         System.out.println();
                         break;
                     case 3:
-       
+                        Q3Driver.circleTest();
                         System.out.println();
                         break;
                     case 4:
