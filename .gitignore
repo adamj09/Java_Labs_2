@@ -4,8 +4,9 @@
 # Misc
 *.DS_Store
 
-# Ignore compiled classes (from Intellij)
+# Ignore compiled classes
 /out/
+*.class
 
 /Lab_1_2/nbproject/private/
 /Lab_2_2/nbproject/private/
