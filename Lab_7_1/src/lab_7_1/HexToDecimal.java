@@ -1,4 +1,4 @@
-package Lab_7_1.src.lab_7_1;
+package lab_7_1;
 
 public class HexToDecimal {
     public static int hexToDecimal(String hex) {
