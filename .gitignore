@@ -1,12 +1,15 @@
-# Ignore txt files created for IO labs
+# txt files created for IO labs
 *.txt
 
 # Misc
 *.DS_Store
 
-# Ignore compiled classes
-/out/
+# Compiled classes
 *.class
+
+# Intellij stuff
+/out/
+.idea
 
 /Lab_1_2/nbproject/private/
 /Lab_2_2/nbproject/private/
