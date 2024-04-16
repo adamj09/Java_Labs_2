@@ -1,4 +1,4 @@
-package src.lab_9_2;
+package lab_9_2;
 
 // This class was provided by M.D. Istiaque Shahriar
 public abstract class GeometricObject {

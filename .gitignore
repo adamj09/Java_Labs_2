@@ -1,3 +1,12 @@
+# Ignore txt files created for IO labs
+*.txt
+
+# Misc
+*.DS_Store
+
+# Ignore compiled classes (from Intellij)
+/out/
+
 /Lab_1_2/nbproject/private/
 /Lab_2_2/nbproject/private/
 /Lab_3_1/nbproject/private/
@@ -10,12 +19,6 @@
 /Lab_6_2/nbproject/private/
 /Lab_7_1/nbproject/private/
 /Lab_7_2/nbproject/private/
-
-# Ignore txt files created for IO labs
-*.txt
-
-# Misc
-*.DS_Store
 /Lab_8_1/nbproject/private/
 /Lab_8_2/nbproject/private/
 /Lab_9_1/nbproject/private/

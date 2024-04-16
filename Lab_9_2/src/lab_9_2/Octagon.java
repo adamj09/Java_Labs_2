@@ -1,9 +1,7 @@
-package src.lab_9_2;
+package lab_9_2;
 import java.lang.Cloneable;
 public class Octagon extends GeometricObject implements Cloneable, Comparable<Octagon> {
-
     private double side;
-
 
     Octagon() {
         this.side = 0;
@@ -30,7 +28,6 @@ public class Octagon extends GeometricObject implements Cloneable, Comparable<Oc
         return 8*side;
     }
 
-
     @Override
     public int compareTo(Octagon o) {
         return 0;
@@ -46,8 +43,4 @@ public class Octagon extends GeometricObject implements Cloneable, Comparable<Oc
         }
         return null;
     }
-
-
-
-
 }

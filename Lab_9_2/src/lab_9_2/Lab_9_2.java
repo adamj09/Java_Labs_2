@@ -1,4 +1,4 @@
-package src.lab_9_2;
+package lab_9_2;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -17,7 +17,7 @@ public class Lab_9_2 {
                         System.out.println();
                         break;
                     case 2:
-                        
+                        Q2Driver.octagonTest();
                         System.out.println();
                         break;
                     case 3:
