@@ -3,7 +3,6 @@ package lab_9_2;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-// test
 public class Lab_9_2 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
