@@ -9,33 +9,28 @@ public class Lab_9_2 {
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Colorable Test\n [2] Octogon Test \n "+ 
                 "[3] Circle Test \n [4] Exit");
-            // Get choice of demo from user
-            try {
-                switch (userInput.nextInt()) {
-                    case 1:
+            try { 
+                switch (userInput.nextInt()) { // Get choice of demo from user
+                    case 1: // Q1
                         Q1Driver.colorableTest();
-                        System.out.println();
                         break;
-                    case 2:
+                    case 2: // Q2
                         Q2Driver.octagonTest();
-                        System.out.println();
                         break;
-                    case 3:
+                    case 3: // Q3
                         Q3Driver.circleTest();
-                        System.out.println();
                         break;
-                    case 4:
+                    case 4: // Exit app
+                        userInput.close();
                         System.exit(0);
-                        break;
-                    default:
-                        System.err.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
-                        break;
+                    default: // Invalid number
+                        throw new InputMismatchException();
                 }
+                System.out.println(); // Add spacing between menu and demo
             }
-            catch(InputMismatchException ex) {
+            catch(InputMismatchException ex) { // Catch any invalid input
                 System.err.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
-                userInput.nextLine();
-                continue;
+                userInput.nextLine(); // Clear input
             }
         }
     }

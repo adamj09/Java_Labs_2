@@ -44,6 +44,7 @@ public class Circle extends GeometricObject implements Comparable<GeometricObjec
         return 0; // If the areas are the same, return 0
     }
 
+    // Checks this circle's radius against another's, and return true if they're the same.
     public boolean equals(Circle circle) {
         if(circle.getRadius() == radius) {
             return true;
