@@ -1,1 +1,1 @@
-All labs are found here.
+All completed labs for Java 102 are found here.
