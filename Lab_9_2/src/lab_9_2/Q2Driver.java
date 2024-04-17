@@ -1,7 +1,6 @@
 package lab_9_2;
-import java.lang.Cloneable;
 
-public class Q2Driver implements Cloneable{
+public class Q2Driver {
     public static void octagonTest() {
         // Create a new octagon and display its properties
         Octagon octagon = new Octagon(5);

@@ -1,5 +1,6 @@
 package lab_9_2;
 import java.lang.Cloneable;
+
 public class Octagon extends GeometricObject implements Cloneable, Comparable<Octagon> {
     private double side;
 
