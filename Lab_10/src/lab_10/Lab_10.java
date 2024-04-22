@@ -3,6 +3,7 @@ package lab_10;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+import lab_10.Q3.Q3Driver;
 import lab_10.Q5.Q5Driver;
 
 public class Lab_10 {
@@ -10,7 +11,7 @@ public class Lab_10 {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] \n [2] \n "+ 
-                "[3] \n [4] \n [5] Summable Test \n [6] Exit");
+                "[3] URL Read Test \n [4] \n [5] Summable Test \n [6] Exit");
             try { 
                 switch (userInput.nextInt()) { // Get choice of demo from user
                     case 1: // Q1
@@ -20,7 +21,7 @@ public class Lab_10 {
                         
                         break;
                     case 3: // Q3
-                        
+                        Q3Driver.urlTest();
                         break;
                     case 4: // Q4
 
