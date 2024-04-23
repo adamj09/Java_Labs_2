@@ -3,6 +3,8 @@ package lab_10;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+import lab_10.Q1.AdditionQuiz;
+import lab_10.Q1.MultiplicationQuiz;
 import lab_10.Q3.Q3Driver;
 import lab_10.Q5.Q5Driver;
 
@@ -10,15 +12,15 @@ public class Lab_10 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] \n [2] \n "+ 
+            System.out.println("--- Demos ---\n [1] Addition Quiz \n [2] Multiplication Quiz \n "+ 
                 "[3] URL Read Test \n [4] \n [5] Summable Test \n [6] Exit");
             try { 
                 switch (userInput.nextInt()) { // Get choice of demo from user
                     case 1: // Q1
-                        
+                        new AdditionQuiz(-50, 50).run();
                         break;
                     case 2: // Q2
-                        
+                        new MultiplicationQuiz(-12, 12).run();
                         break;
                     case 3: // Q3
                         Q3Driver.urlTest();
