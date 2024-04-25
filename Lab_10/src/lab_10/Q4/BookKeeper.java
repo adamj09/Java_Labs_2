@@ -24,7 +24,6 @@ public class BookKeeper {
         catch(IOException ex) {
             System.out.println(ex);
         }
-        userInput.close();
     }
 
     // Add a new book to the list
