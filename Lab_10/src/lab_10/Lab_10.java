@@ -27,7 +27,7 @@ public class Lab_10 {
                         new MultiplicationQuiz(-12, 12).run();
                         break;
                     case 3: // Q2
-                        try {
+                        try { // If file is not found, create some file and add the filepath to it here
                             FileSearcher.findOccurencesOfLetters("Lab_10/someText.txt");
                         }
                         catch(FileNotFoundException ex) {
