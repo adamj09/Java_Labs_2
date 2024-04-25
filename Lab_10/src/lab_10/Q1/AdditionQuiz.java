@@ -57,7 +57,6 @@ public class AdditionQuiz implements Calculable {
                 // Add previous (incorrect) answer to list and notify user it's incorrect
                 previousAnswers.add(Integer.parseInt(answer)); 
                 System.out.println("Incorrect. Please try again.");
-                
             }
         }
     }

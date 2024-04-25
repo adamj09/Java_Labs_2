@@ -12,7 +12,7 @@ public class ReadFromURL {
             URL url = new URL(urlString);
             Scanner input = new Scanner(url.openStream());
             while(input.hasNext()) {
-                content += input.next() + " ";
+                content += input.next() + " "; // Add words to content
             }
         }
         catch(MalformedURLException ex) {

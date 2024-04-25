@@ -8,14 +8,16 @@ import lab_10.Q1.AdditionQuiz;
 import lab_10.Q1.MultiplicationQuiz;
 import lab_10.Q2.FileSearcher;
 import lab_10.Q3.Q3Driver;
+import lab_10.Q4.BookKeeper;
 import lab_10.Q5.Q5Driver;
 
 public class Lab_10 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Addition Quiz \n [2] Multiplication Quiz \n "+ 
-                "[3] Occurences of Letters Finder \n [4] URL Read Test \n [6] Summable Test \n [7] Exit");
+            System.out.println("--- Demos ---\n [1] Addition Quiz \n [2] Multiplication Quiz \n " + 
+                "[3] Occurences of Letters Finder \n [4] URL Read Test \n [5] Book Keeper \n " +
+                "[6] Summable Test \n [7] Exit");
             try { 
                 switch (userInput.nextInt()) { // Get choice of demo from user
                     case 1: // Q1
@@ -36,7 +38,7 @@ public class Lab_10 {
                         Q3Driver.urlTest();
                         break;
                     case 5: // Q4
-
+                        BookKeeper.bookKeep();
                         break;
                     case 6: // Q5
                         Q5Driver.summableTest();
