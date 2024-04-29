@@ -1,35 +1,31 @@
 package lab_11;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.PriorityQueue;
 import java.util.Scanner;
-
-import javax.sound.midi.Soundbank;
 
 public class Lab_11 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
             System.out.println("--- Demos ---\n [1] Stack Test \n [2] Linked List Test \n " + 
-                "[3] Priority Queue Test \n [5] Exit");
+                "[3] Priority Queue Test \n [4] Exit");
             try { 
                 switch (userInput.nextInt()) { // Get choice of demo from user
                     case 1: // Q1
                         genericStackTest();
                         break;
-                    case 2: // Q1
+                    case 2: // Q2
                         linkedListTest();
                         break;
-                    case 3: // Q2
- 
+                    case 3: // Q3
+                        priorityQueueTest();
                         break;
-                    case 4: // Q3
-                        
-                        break;
-                    case 5: // Exit app
+                    case 4: // Exit app
                         userInput.close();
                         System.exit(0);
                     default: // Invalid number
@@ -104,4 +100,35 @@ public class Lab_11 {
             System.out.println(iterator.previous().toString());
         }
     }
-}
+
+    public static void priorityQueueTest() {
+        // Reverse order using Comparator
+        PriorityQueue<Integer> queue1 = new PriorityQueue<>(Comparator.reverseOrder());
+        queue1.offer(7);
+        queue1.offer(1);
+        queue1.offer(2);
+        queue1.offer(3);
+        queue1.offer(4);
+        queue1.offer(5);
+        queue1.offer(6);
+        // Print Queue
+        while(queue1.size() > 0) {
+            System.out.print(queue1.remove() + " ");
+        }
+
+        System.out.println(); // Spacing
+        // Forward order using Comparable interface implemented by Integer
+        PriorityQueue<Integer> queue2 = new PriorityQueue<>();
+        queue2.offer(7);
+        queue2.offer(1);
+        queue2.offer(2);
+        queue2.offer(3);
+        queue2.offer(4);
+        queue2.offer(5);
+        queue2.offer(6);
+        // Print Queue
+        while(queue2.size() > 0) {
+            System.out.print(queue2.remove() + " ");
+        }
+    }
+} 
