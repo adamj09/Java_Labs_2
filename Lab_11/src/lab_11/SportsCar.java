@@ -1,5 +1,6 @@
 package lab_11;
 
+// Basic SportsCar model Class
 public class SportsCar {
     String model, make, colour;
 
