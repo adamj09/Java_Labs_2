@@ -1,7 +1,13 @@
 package lab_11;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
+
+import javax.sound.midi.Soundbank;
 
 public class Lab_11 {
     public static void main(String[] args) {
@@ -15,7 +21,7 @@ public class Lab_11 {
                         genericStackTest();
                         break;
                     case 2: // Q1
-                        
+                        linkedListTest();
                         break;
                     case 3: // Q2
  
@@ -63,6 +69,39 @@ public class Lab_11 {
         System.out.println("\n--- All SportsCars ---");
         while(!sportsCarStack.isEmpty()) {
             System.out.println(sportsCarStack.pop().toString());
+        }
+    }
+
+    public static void linkedListTest() {
+        // Objects to be added to linked list
+        ArrayList<SportsCar> sportsCars = new ArrayList<>();
+        sportsCars.add(new SportsCar("LaFerrari", "Ferrari", "Red"));
+        sportsCars.add(new SportsCar("Hurican", "Lamborghini", "Black"));
+        sportsCars.add(new SportsCar("911", "Porsche", "Blue"));
+        sportsCars.add(new SportsCar("California T", "Ferrari", "Orange"));
+        sportsCars.add(new SportsCar("Sesto Elemento", "Lamborghini", "Black"));
+        sportsCars.add(new SportsCar("Cayenne", "Porsche", "Grey"));
+        // Create LinkedList
+        LinkedList<SportsCar> linkedList = new LinkedList<>(sportsCars);
+        System.out.println("\nOriginal List: " + linkedList.toString());
+        // Test Remove
+        System.out.println("\nRemoving: " + sportsCars.get(2).toString() + "...");
+        linkedList.remove(2);
+        // Test add
+        SportsCar goofyCar = new SportsCar("Goofymobile", "Goofy", "blue");
+        System.out.println("\nAdding: " + goofyCar.toString() + "...");
+        linkedList.add(goofyCar);
+        // Test Iterator
+        ListIterator<SportsCar> iterator = linkedList.listIterator();
+        // Move forward through LinkedList
+        System.out.println("\n--- Linked List Forward ---");
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next().toString());
+        }
+        // Move backward through LinkedList
+        System.out.println("\n--- Linked List Backward ---");
+        while(iterator.hasPrevious()) {
+            System.out.println(iterator.previous().toString());
         }
     }
 }
