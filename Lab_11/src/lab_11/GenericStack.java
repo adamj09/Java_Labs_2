@@ -1,5 +1,6 @@
 package lab_11;
-  
+
+// Class provided by M.D. Istiaque Shahriar
 public class GenericStack<E> {
   private java.util.ArrayList<E> list = new java.util.ArrayList<>();
 
@@ -25,6 +26,7 @@ public class GenericStack<E> {
     return list.isEmpty();
   }
 
+  // Method added by Adam Johnston
   public int search(E o) {
     if(!list.contains(o)) {
       return -1;
