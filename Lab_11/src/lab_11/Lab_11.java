@@ -12,20 +12,23 @@ public class Lab_11 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         while(true){ // Run app (with menu)
-            System.out.println("--- Demos ---\n [1] Stack Test \n [2] Linked List Test \n " + 
-                "[3] Priority Queue Test \n [4] Exit");
+            System.out.println("--- Demos ---\n [1] Generic Stack Test\n [2] Generic Queue Test\n " + 
+                "[3] Linked List Test\n [4] Priority Queue Test\n [5] Exit");
             try { 
                 switch (userInput.nextInt()) { // Get choice of demo from user
                     case 1: // Q1
                         genericStackTest();
                         break;
-                    case 2: // Q2
+                    case 2: // Q1
+                        genericQueueTest();
+                        break;
+                    case 3: // Q2
                         linkedListTest();
                         break;
-                    case 3: // Q3
+                    case 4: // Q3
                         priorityQueueTest();
                         break;
-                    case 4: // Exit app
+                    case 5: // Exit app
                         userInput.close();
                         System.exit(0);
                     default: // Invalid number
@@ -35,7 +38,7 @@ public class Lab_11 {
             }
             catch(InputMismatchException ex) { // Catch any invalid input
                 System.err.println("Invalid choice. \nPlease enter an integer between 1 and 5.");
-                userInput.nextLine(); // Clear input
+                userInput.nextLine(); // Discard input on current line
             }
         }
     }
@@ -66,6 +69,29 @@ public class Lab_11 {
         while(!sportsCarStack.isEmpty()) {
             System.out.println(sportsCarStack.pop().toString());
         }
+    }
+
+    public static void genericQueueTest() {
+        String[] animalStrings = { // Objects to be added to queue
+            "tiger",
+            "panda",
+            "leopard",
+            "iguana",
+            "wolf"
+        };
+
+        // Create Queue
+        GenericQueue<String> animals = new GenericQueue<>();
+        for(String animal : animalStrings) {
+            animals.enqueue(animal);
+        }
+
+        System.out.println("Queue Size: " + animals.getSize());
+        System.out.println("Removing first element: " + animals.dequeue());
+        System.out.println("Queue Size after removing first element: " + animals.getSize());
+    
+        System.out.println("Position of \"" + animalStrings[2] + "\" in queue: " + animals.search(animalStrings[2]));
+        System.out.println("Position of \"" + animalStrings[0] + "\" in queue: " + animals.search(animalStrings[0]) + " (should be -1)");
     }
 
     public static void linkedListTest() {
@@ -112,6 +138,7 @@ public class Lab_11 {
         queue1.offer(5);
         queue1.offer(6);
         // Print Queue
+        System.out.print("Reversed priority queue: ");
         while(queue1.size() > 0) {
             System.out.print(queue1.remove() + " ");
         }
@@ -127,6 +154,7 @@ public class Lab_11 {
         queue2.offer(5);
         queue2.offer(6);
         // Print Queue
+        System.out.print("Regular priority queue: ");
         while(queue2.size() > 0) {
             System.out.print(queue2.remove() + " ");
         }
