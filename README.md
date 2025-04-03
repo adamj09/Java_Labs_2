@@ -1,1 +1,1 @@
-All completed labs for Java 102 are found here.
+This repository has been archived since the course was completed.
